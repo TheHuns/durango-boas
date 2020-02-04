@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Navbar --------------------------------------------------------
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background: #90bd6cb9;
+  .brand {
+    margin-left: 2rem;
+    a {
+      font-size: 1.7rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      width: calc(inherit + 5px);
+      &:hover {
+        color: rgb(67, 87, 48);
+        font-weight: bold;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+      padding: 0 2rem;
+      a {
+        text-decoration: none;
+        color: #333;
+        width: calc(inherit + 5px);
+        &:hover {
+          color: rgb(67, 87, 48);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Index Page ----------------------------------------------------
+.index-page {
+  padding: 3rem;
+  background: #f4f4f4;
+  min-height: 90vh;
+}
+
+// Available Summary Page ----------------------------------------
+.available-summary {
+  padding: 3rem;
+  background: #f4f4f4;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .post {
+    background: #fff;
+    width: 300px;
+    padding: 1rem;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267),
+      -6px -6px 6px rgba(253, 253, 253, 0.959);
+    border-radius: 3px;
+  }
+}
+
+// About Page ----------------------------------------------------
+.about-page {
+  padding: 3rem;
+  background: #f4f4f4;
+}
+
+// Footer ---------------------------------------------------------
+footer {
+  background: #333;
+  color: #fff;
+  height: 6vh;
+}

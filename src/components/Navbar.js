@@ -32,9 +32,12 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav>
+        <div className="brand">
+          <Link to="/">DurangoBoas</Link>
+        </div>
         <ul>
           <li>
-            <Link to="/available">Available Animals</Link>
+            <Link to="/available-summary">Available Animals</Link>
           </li>
           <li>
             <Link to="/about">About Us</Link>
