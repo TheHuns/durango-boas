@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AvalablePostTemplate } from "../../templates/available-summary";
+import AvalablePostTemplate from "../../templates/available-post";
 
 const AvalablePostPreview = ({ entry, widgetFor }) => (
   <AvalablePostTemplate
@@ -10,7 +10,7 @@ const AvalablePostPreview = ({ entry, widgetFor }) => (
   />
 );
 
-AboutPagePreview.propTypes = {
+AvalablePostPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func
   }),

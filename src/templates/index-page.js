@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 import Layout from "../components/Layout";
 
@@ -14,6 +15,18 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div className="index-page">
+    <div
+      className="showcase-image"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+        height: "500px",
+        width: "400px",
+        backgroundSize: "cover"
+      }}
+    ></div>
+
     <h1>{title}</h1>
     <h3>{heading}</h3>
     <p>{subheading}</p>
@@ -65,7 +78,13 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 240, quality: 64) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         heading
         subheading
       }
