@@ -46,6 +46,7 @@ IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
+  console.log(data);
   const { frontmatter } = data.markdownRemark;
 
   return (

@@ -1,12 +1,8 @@
 ---
 templateKey: index-page
-<<<<<<< HEAD
-
-=======
-title: 'Caring herpetology experts in the 4 corners region '
+title: "Caring herpetology experts in the 4 corners region "
 image: /img/snake.jpg
 heading: Check out our variety of animals bred in the best conditions
->>>>>>> bf8eee73011b7d3f9ac6869a70789c7ae3ac89f4
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
   title: Why Kaldi
