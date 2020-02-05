@@ -37,6 +37,7 @@ collections:
     folder: "src/pages/available-post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
     fields:
       - {
           label: "Template Key",
