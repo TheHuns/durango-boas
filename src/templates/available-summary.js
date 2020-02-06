@@ -18,6 +18,7 @@ const AvailablePostsPage = ({ data }) => {
               name={post.node.frontmatter.name}
               content={post.node.frontmatter.description}
               dob={post.node.frontmatter.dob}
+              image={post.node.frontmatter.featuredimage}
             />
           ))}
         </div>
@@ -43,6 +44,14 @@ export const pageQuery = graphql`
           frontmatter {
             name
             description
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            dob
           }
         }
       }

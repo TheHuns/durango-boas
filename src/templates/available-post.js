@@ -1,23 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import * as dateformat from "dateformat";
 
 const AvailablePostTemplate = ({
   name,
   salepending,
   dob,
   content,
-  contentComponent
+  contentComponent,
+  image
 }) => {
-  const PageContent = contentComponent || Content;
-
+  const date = dateformat(dob, "mmmm dS, yyyy");
   return (
     <section className="post">
-      <h2>{name}</h2>
-      <p>Date of Birth: {dob}</p>
-      <p>About: {content}</p>
+      <div
+        className="feature-image"
+        style={{
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+
+          backgroundSize: "cover"
+        }}
+      ></div>
+      <div className="info">
+        <h2>
+          <span className="label">Name:</span> {name}
+        </h2>
+        <p>
+          <span className="label">Date of Birth:</span> {date}
+        </p>
+        <p>
+          <span className="label">About:</span> {content}
+        </p>
+      </div>
     </section>
   );
 };

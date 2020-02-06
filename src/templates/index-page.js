@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 import Layout from "../components/Layout";
 
@@ -15,21 +14,22 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div className="index-page">
+    <div className="path"></div>
     <div
       className="showcase-image"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        height: "500px",
-        width: "400px",
         backgroundSize: "cover"
       }}
-    ></div>
-
-    <h1>{title}</h1>
-    <h3>{heading}</h3>
-    <p>{subheading}</p>
+    >
+      <p className="caption">{subheading}</p>
+    </div>
+    <div className="slogan">
+      <h1>{title}</h1>
+      <h3>{heading}</h3>
+    </div>
   </div>
 );
 
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 240, quality: 64) {
+            fluid(maxWidth: 640, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

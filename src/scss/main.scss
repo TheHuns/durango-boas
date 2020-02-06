@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 // Navbar --------------------------------------------------------
 nav {
   display: flex;
@@ -46,6 +50,45 @@ nav {
   padding: 3rem;
   background: #f4f4f4;
   min-height: 90vh;
+  position: relative;
+
+  .path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #90bd6c49;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+
+  .showcase-image {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 30%;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267),
+      -6px -6px 6px rgba(253, 253, 253, 0.801);
+
+    .caption {
+      position: absolute;
+      bottom: -10%;
+    }
+  }
+
+  .slogan {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 40%;
+    background: #fff;
+    padding: 1.2rem;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267),
+      -6px -6px 6px rgba(253, 253, 253, 0.801);
+    border-radius: 5px;
+  }
 }
 
 // Available Summary Page ----------------------------------------
@@ -58,13 +101,43 @@ nav {
     margin-bottom: 2rem;
   }
 
+  .post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 2rem;
+  }
+
   .post {
     background: #fff;
-    width: 300px;
-    padding: 1rem;
+    width: 100%;
+    height: fit-content;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267),
       -6px -6px 6px rgba(253, 253, 253, 0.959);
-    border-radius: 3px;
+    border-radius: 5px;
+
+    .feature-image {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 0.3rem;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .info {
+      padding: 1.5rem;
+    }
+
+    .label {
+      font-size: 0.8rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+    p {
+      margin-top: 0.4rem;
+    }
   }
 }
 
@@ -73,6 +146,73 @@ nav {
   padding: 3rem;
   background: #f4f4f4;
   min-height: 90vh;
+}
+
+// Contact Page --------------------------------------------------
+.contact-page {
+  margin: 3rem;
+  background: #f8f8f8;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-height: 80vh;
+  max-width: 1200px;
+
+  .left-column {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .greeting {
+      width: 80%;
+
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .form-box {
+      width: 80%;
+      background: #fff;
+      padding: 1.5rem;
+
+      .input-group {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 0.8rem;
+          font-weight: bold;
+          margin-bottom: 0.4rem;
+        }
+
+        input {
+          padding: 0.3rem 0.8rem;
+          border: 1px solid #444;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .right-column {
+    background: #fff;
+    padding: 1.5rem;
+
+    .contact-type {
+      margin-bottom: 1.5rem;
+
+      h3,
+      h5 {
+        color: rgb(67, 87, 48);
+        margin-bottom: 0.3rem;
+      }
+      p {
+        color: #333;
+      }
+    }
+  }
 }
 
 // Footer ---------------------------------------------------------
