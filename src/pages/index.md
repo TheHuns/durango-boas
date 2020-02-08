@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: "Caring herpetology experts in the 4 corners region "
+title: 'Caring Boa breeding experts in the 4 corners region '
 image: /img/snake.jpg
 heading: Check out our variety of animals bred in the best conditions
-subheading: Support sustainable farming while enjoying a cup
+subheading: A young male from a recent litter
 mainpitch:
   title: Why Kaldi
   description: >
@@ -68,3 +68,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
