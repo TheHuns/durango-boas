@@ -16,11 +16,7 @@ const AvailablePostTemplate = ({
       <div
         className="feature-image"
         style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
-
-          backgroundSize: "cover"
+          backgroundImage: `url(${image.childImageSharp.fluid.src})`
         }}
       ></div>
       <div className="info">
