@@ -34,7 +34,7 @@ collections:
 
   - name: "animal"
     label: "Animal"
-    folder: "src/pages/available-post"
+    folder: "src/otherMarkdown/available-post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: name

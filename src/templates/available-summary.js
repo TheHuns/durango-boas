@@ -1,19 +1,44 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import AvailablePostTemplate from "./available-post";
 
-const AvailablePostsPage = ({ data }) => {
-  const { edges } = data.allMarkdownRemark;
-  console.log(edges);
+export default () => {
+  const data = useStaticQuery(graphql`
+    query availablePostQuery {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "available-post" } } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              name
+              description
+              featuredimage {
+                childImageSharp {
+                  fluid(maxWidth: 240, quality: 64) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              dob
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data);
   return (
     <Layout>
       <div className="available-summary">
         <h1>Available Animals</h1>
         <div className="post-container">
-          {edges.map(post => (
+          {data.allMarkdownRemark.edges.map(post => (
             <AvailablePostTemplate
               name={post.node.frontmatter.name}
               content={post.node.frontmatter.description}
@@ -27,34 +52,28 @@ const AvailablePostsPage = ({ data }) => {
   );
 };
 
-AvailablePostsPage.propTypes = {
-  data: PropTypes.object.isRequired
-};
-
-export default AvailablePostsPage;
-
-export const pageQuery = graphql`
-  query AvailablePostsPage {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "available-post" } } }
-    ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            name
-            description
-            featuredimage {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            dob
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query AvailablePostsPage {
+//     allMarkdownRemark(
+//       filter: { frontmatter: { templateKey: { eq: "available-post" } } }
+//     ) {
+//       edges {
+//         node {
+//           html
+//           frontmatter {
+//             name
+//             description
+//             featuredimage {
+//               childImageSharp {
+//                 fluid(maxWidth: 240, quality: 64) {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//             dob
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

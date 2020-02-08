@@ -67,7 +67,6 @@ ContactPageTemplate.propTypes = {
 
 const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log(post);
 
   return (
     <Layout>
