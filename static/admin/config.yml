@@ -34,7 +34,7 @@ collections:
 
   - name: "animal"
     label: "Animal"
-    folder: "src/otherMarkdown/available-post"
+    folder: "src/pages/available-post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: name
@@ -58,10 +58,9 @@ collections:
           label: "Sale Pending",
           name: "salepending",
           widget: "boolean",
-          optional: true,
+          required: true,
         }
       - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Tags", name: "tags", widget: "list", optional: true }
 
   - name: "pages"
     label: "Pages"
