@@ -29,8 +29,11 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
+    const filteredPosts = posts.filter(
+      post => post.node.frontmatter.templateKey != "available-post"
+    );
 
-    posts.forEach(edge => {
+    filteredPosts.forEach(edge => {
       const id = edge.node.id;
       createPage({
         path: edge.node.fields.slug,
