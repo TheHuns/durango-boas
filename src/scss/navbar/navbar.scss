@@ -1,0 +1,38 @@
+// Navbar --------------------------------------------------------
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 2;
+  position: relative;
+
+  .brand {
+    margin-left: 2rem;
+    a {
+      font-size: 1.7rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #ddd;
+      &:hover {
+        color: rgb(67, 87, 48);
+        font-weight: bold;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+      padding: 0 2rem;
+      a {
+        text-decoration: none;
+        color: #ddd;
+        &:hover {
+          color: rgb(67, 87, 48);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

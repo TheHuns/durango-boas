@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-title: 'Caring Boa breeding experts in the 4 corners region '
-image: /img/snake.jpg
+title: "Caring Boa breeding experts in the 4 corners region "
+image: /img/green-snake.jpg
 heading: Check out our variety of animals bred in the best conditions
 subheading: A young male from a recent litter
 mainpitch:
@@ -68,4 +68,3 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
-

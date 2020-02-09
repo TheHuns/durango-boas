@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
 
 const Navbar = class extends React.Component {
   state = {
@@ -30,12 +28,23 @@ const Navbar = class extends React.Component {
   };
 
   render() {
+    const { navbarBackground } = this.props;
+
     return (
-      <nav>
+      <nav
+        style={{
+          backgroundColor: navbarBackground
+            ? `${navbarBackground}`
+            : "transparent"
+        }}
+      >
         <div className="brand">
           <Link to="/">DurangoBoas</Link>
         </div>
         <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
             <Link to="/available-summary">Available Animals</Link>
           </li>

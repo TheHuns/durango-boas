@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Durango Boas Herpetologica",
+    title: "Durango Boas",
     description: "Update this description about your business"
   },
   plugins: [

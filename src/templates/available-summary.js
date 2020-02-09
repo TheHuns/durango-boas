@@ -34,7 +34,7 @@ export default () => {
 
   console.log(data);
   return (
-    <Layout>
+    <Layout navbarBackground="#032108">
       <div className="available-summary">
         <h1>Available Animals</h1>
         <div className="post-container">

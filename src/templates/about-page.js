@@ -27,7 +27,7 @@ const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout navbarBackground="#032108">
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

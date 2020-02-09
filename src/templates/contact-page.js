@@ -69,7 +69,7 @@ const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout navbarBackground="#032108">
       <ContactPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div className="index-page">
-    <div className="path"></div>
+    <div className="overlay"></div>
     <div
       className="showcase-image"
       style={{
