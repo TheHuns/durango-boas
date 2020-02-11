@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Logo from "../img/boa-logo";
 
 const Navbar = class extends React.Component {
   state = {
@@ -39,7 +40,13 @@ const Navbar = class extends React.Component {
         }}
       >
         <div className="brand">
-          <Link to="/">DurangoBoas</Link>
+          <Link to="/">
+            {/* <img src={Logo} alt="" style={{ color: "#ddd" }} /> */}
+            <svg style={{ height: "35px", width: "35px" }}>
+              <Logo />
+            </svg>
+            <h1>DurangoBoas</h1>
+          </Link>
         </div>
         <ul>
           <li>

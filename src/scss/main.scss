@@ -12,9 +12,11 @@ body {
 }
 
 @import "./index-page/showcase";
+@import "./index-page/testimonials";
 @import "./navbar/navbar.scss";
 @import "./available-summary/available.scss";
 @import "./contact/contact.scss";
+@import "./footer/footer.scss";
 
 // About Page ----------------------------------------------------
 .about-page {
@@ -24,11 +26,14 @@ body {
   min-height: 90vh;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
   border-radius: 5px;
-}
 
-// Footer ---------------------------------------------------------
-footer {
-  background: #333;
-  color: #fff;
-  height: 6vh;
+  h2 {
+    padding-bottom: 2rem;
+  }
+  h3 {
+    padding-bottom: 0.6rem;
+  }
+  p {
+    padding-bottom: 1.2rem;
+  }
 }

@@ -3,7 +3,7 @@
 // Available Summary Page ----------------------------------------
 .available-summary {
   padding: 3rem;
-  background: $light-green;
+  background: $lighter-green;
   min-height: 90vh;
 
   h1 {
@@ -12,7 +12,7 @@
 
   .post-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+    grid-template-columns: repeat(3, minmax(200px, 350px));
     grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 2rem;
   }

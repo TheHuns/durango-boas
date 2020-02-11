@@ -1,0 +1,23 @@
+@import "../config/variables";
+
+.testimonials {
+  height: 300px;
+  border: solid 1px black;
+  background: $lighter-green;
+  position: relative;
+  text-align: center;
+  padding-top: 5rem;
+  margin: 2rem;
+
+  h2 {
+    display: inline-block;
+    position: absolute;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+  }
+
+  &:nth-child(4) {
+    margin-bottom: 3rem;
+  }
+}

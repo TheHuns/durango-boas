@@ -40,23 +40,42 @@
 
       .input-group {
         margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
 
         label {
           font-size: 0.8rem;
           font-weight: bold;
           margin-bottom: 0.4rem;
-        }
+          width: 100%;
+          display: flex;
+          flex-direction: column;
 
-        input {
-          padding: 0.3rem 0.8rem;
-          border: 1px solid #444;
-          border-radius: 4px;
+          input {
+            padding: 0.3rem 0.8rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+          }
+          textarea {
+            height: 100%;
+            margin-top: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #444;
+            padding: 0.3rem 0.8rem;
+          }
         }
-        .text-area {
-          height: 100%;
-        }
+      }
+      button {
+        width: 200px;
+        margin-left: auto;
+        padding: 0.3rem 0;
+        border-radius: 3px;
+        background: $accent;
+        color: #fff;
+        max-height: 35px;
+        border: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        cursor: pointer;
       }
     }
   }

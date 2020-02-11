@@ -8,18 +8,34 @@ nav {
   position: relative;
 
   .brand {
-    margin-left: 2rem;
     a {
-      font-size: 1.7rem;
-      font-weight: bold;
       text-decoration: none;
-      color: #ddd;
+      margin-left: 2rem;
+      display: flex;
+      align-items: center;
+
+      h1 {
+        margin-left: 0.4rem;
+        color: #ddd;
+        text-decoration: none;
+        display: inline-block;
+      }
+      #logo {
+        fill: #ddd;
+        margin-right: 0.5rem;
+      }
+
       &:hover {
-        color: rgb(67, 87, 48);
-        font-weight: bold;
+        h1 {
+          color: #fff;
+        }
+        #logo {
+          fill: #fff;
+        }
       }
     }
   }
+
   ul {
     display: flex;
     list-style: none;
@@ -29,8 +45,8 @@ nav {
         text-decoration: none;
         color: #ddd;
         &:hover {
-          color: rgb(67, 87, 48);
-          font-weight: bold;
+          color: #fff;
+          filter: drop-shadow(0 0 18px $light-green);
         }
       }
     }

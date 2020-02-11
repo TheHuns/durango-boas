@@ -22,21 +22,40 @@ export const ContactPageTemplate = ({
           <p>{description}</p>
         </div>
 
-        <div className="form-box">
+        <form
+          className="form-box"
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="input-group">
-            <label htmlFor="name">NAME</label>
-            <input type="text" name="name" />
+            <label htmlFor="name">
+              NAME
+              <input type="text" name="name" placeholder="enter name.." />
+            </label>
           </div>
           <div className="input-group">
-            <label htmlFor="emial">EMAIL</label>
-            <input type="text" name="email" />
+            <label htmlFor="emial">
+              EMAIL
+              <input type="text" name="email" placeholder="enter email.." />
+            </label>
           </div>
           <div className="input-group">
-            <label htmlFor="message">MESSAGE</label>
-            <textarea name="message" id="" cols="30" rows="10"></textarea>
+            <label htmlFor="message">
+              MESSAGE{" "}
+              <textarea
+                name="message"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="message.."
+              ></textarea>
+            </label>
           </div>
           <button type="submit">SUBMIT</button>
-        </div>
+        </form>
       </div>
 
       <div className="right-column">
