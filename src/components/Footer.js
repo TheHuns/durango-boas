@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 
 import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
+import Facebook from "../img/facebook.js";
+import Instagram from "../img/Instagram.js";
+import Twitter from "../img/Twitter.js";
 import vimeo from "../img/social/vimeo.svg";
 
 const Footer = class extends React.Component {
@@ -33,15 +33,21 @@ const Footer = class extends React.Component {
           <div className="right-column">
             <h4>Find us on social media!</h4>
             <Link to="/">
-              <img src={facebook} alt="facebook" />
+              <svg height="24" width="24">
+                <Facebook />
+              </svg>
               Facebook
             </Link>
             <Link to="/">
-              <img src={instagram} alt="instagram" />
+              <svg height="24" width="24">
+                <Instagram />
+              </svg>
               Instagram
             </Link>
             <Link to="/">
-              <img src={twitter} alt="twitter" />
+              <svg height="24" width="24">
+                <Twitter />
+              </svg>
               Twitter
             </Link>
           </div>

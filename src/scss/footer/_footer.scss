@@ -47,10 +47,18 @@ footer {
         color: #fff;
         filter: drop-shadow(0 0 8px #ddd);
       }
-    }
-    img {
-      height: 24px;
-      padding-right: 0.6rem;
+      img {
+        height: 24px;
+        padding-right: 0.6rem;
+      }
+      svg {
+        fill: #1877f2;
+        margin-right: 0.6rem;
+      }
+
+      #twitter {
+        fill: #1da1f2;
+      }
     }
   }
 
