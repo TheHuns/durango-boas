@@ -13,24 +13,42 @@ nav {
       margin-left: 2rem;
       display: flex;
       align-items: center;
+      transition: all 1s ease-out;
 
       h1 {
         margin-left: 0.4rem;
         color: #ddd;
         text-decoration: none;
         display: inline-block;
+        transition: all 0.5s ease-out;
       }
       #logo {
         fill: #ddd;
         margin-right: 0.5rem;
+        transition: all 0.5s ease-out;
+
+        .eye {
+          fill: $primary-green;
+          stroke: $primary-green;
+          stroke-width: 0.5px;
+          transition: all 1.8s ease-out;
+        }
       }
 
       &:hover {
         h1 {
           color: #fff;
+          filter: drop-shadow(0 0 6px $light-green);
         }
         #logo {
           fill: #fff;
+          filter: drop-shadow(0 0 3px $light-green);
+
+          .eye {
+            fill: red;
+            stroke: red;
+            stroke-width: 0.8px;
+          }
         }
       }
     }
