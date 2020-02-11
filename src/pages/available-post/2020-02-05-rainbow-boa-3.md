@@ -1,13 +1,9 @@
 ---
 templateKey: available-post
-name: Rainbow Boa 3
+name: Joan
 date: 2020-02-05T23:30:07.013Z
-description: this little guy is probably real expensive
+description: I like to eat mice
 dob: 2020-02-05T23:30:07.025Z
-salepending: true
-featuredimage: /img/snake.jpg
-tags:
-  - snake
+featuredimage: /img/close-up-photo-of-reticulated-python-1441454.jpg
 ---
 
-Some text goes here too
