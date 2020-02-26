@@ -99,6 +99,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    visibility: hidden;
 
     button {
       background: $primary-green;
@@ -124,6 +125,7 @@ nav {
   }
   .is-active {
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
 }
 @include phone {
