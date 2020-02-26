@@ -4,6 +4,7 @@
 .index-page {
   padding: 3rem;
   min-height: 100vh;
+  width: 100%;
 
   .overlay {
     position: absolute;
@@ -38,6 +39,15 @@
     color: #ddd;
     h1 {
       margin-bottom: 1.3rem;
+    }
+  }
+}
+
+@include phone {
+  .index-page {
+    padding: 0;
+    .slogan {
+      width: 80%;
     }
   }
 }

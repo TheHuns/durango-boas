@@ -48,7 +48,7 @@ const Navbar = class extends React.Component {
             <h1>DurangoBoas</h1>
           </Link>
         </div>
-        <ul>
+        <ul className="links">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -62,6 +62,28 @@ const Navbar = class extends React.Component {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
+        <div className="menu-btn" onClick={this.toggleHamburger}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        <div className={`phone-menu ${this.state.navBarActiveClass}`}>
+          <button onClick={this.toggleHamburger}>Close Menu</button>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/available-summary">Available Animals</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     );
   }

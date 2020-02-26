@@ -20,7 +20,7 @@ footer {
       a {
         text-decoration: none;
         color: #ddd;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.8rem;
         display: block;
 
         &:hover {
@@ -74,6 +74,16 @@ footer {
       padding-left: 0.3rem;
       // text-decoration: none;
       color: #ddd;
+    }
+  }
+}
+
+@include phone {
+  .main {
+    flex-direction: column;
+    .left-column {
+      width: 80%;
+      margin-bottom: 2rem;
     }
   }
 }

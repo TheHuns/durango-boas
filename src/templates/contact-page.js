@@ -1,8 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import Facebook from "../img/facebook.js";
+import Instagram from "../img/Instagram.js";
+import Twitter from "../img/Twitter.js";
 
 export const ContactPageTemplate = ({
   title,
@@ -67,11 +70,26 @@ export const ContactPageTemplate = ({
           <h3>TELEPHONE</h3>
           <p>{phoneNumber}</p>
         </div>
-        <div className="contact-type">
+        <div className="contact-type social-media">
           <h3>SOCIAL MEDIA</h3>
-          <h5>Link here..</h5>
-          <h5>Link here..</h5>
-          <h5>Link here..</h5>
+          <Link to="/">
+            <svg height="24" width="24">
+              <Facebook />
+            </svg>
+            Facebook
+          </Link>
+          <Link to="/">
+            <svg height="24" width="24">
+              <Instagram />
+            </svg>
+            Instagram
+          </Link>
+          <Link to="/">
+            <svg height="24" width="24">
+              <Twitter />
+            </svg>
+            Twitter
+          </Link>
         </div>
       </div>
     </section>
