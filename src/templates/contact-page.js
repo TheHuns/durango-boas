@@ -40,9 +40,9 @@ export const ContactPageTemplate = ({
             </label>
           </div>
           <div className="input-group">
-            <label htmlFor="emial">
+            <label htmlFor="email">
               EMAIL
-              <input type="text" name="email" placeholder="enter email.." />
+              <input type="email" name="email" placeholder="enter email.." />
             </label>
           </div>
           <div className="input-group">
