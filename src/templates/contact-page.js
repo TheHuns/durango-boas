@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
-import Facebook from "../img/facebook.js";
+import Facebook from "../img/Facebook.js";
 import Instagram from "../img/Instagram.js";
 import Twitter from "../img/Twitter.js";
 

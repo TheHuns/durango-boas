@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import logo from "../img/logo.svg";
-import Facebook from "../img/facebook.js";
+import Facebook from "../img/Facebook.js";
 import Instagram from "../img/Instagram.js";
 import Twitter from "../img/Twitter.js";
 import vimeo from "../img/social/vimeo.svg";
