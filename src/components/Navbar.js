@@ -32,46 +32,24 @@ const Navbar = class extends React.Component {
     const { navbarBackground } = this.props;
 
     return (
-      <nav
-        style={{
-          backgroundColor: navbarBackground
-            ? `${navbarBackground}`
-            : "transparent"
-        }}
-      >
-        <div className="brand">
-          <Link to="/">
-            {/* <img src={Logo} alt="" style={{ color: "#ddd" }} /> */}
-            <svg style={{ height: "35px", width: "35px" }}>
-              <Logo />
-            </svg>
-            <h1>DurangoBoas</h1>
-          </Link>
-        </div>
-        <ul className="links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/available-summary">Available Animals</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-        <div className="menu-btn" onClick={this.toggleHamburger}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-        <div className={`menu-wrapper ${this.state.navBarActiveClass}`}>
-
-        <div className={`phone-menu ${this.state.navBarActiveClass}`}>
-          <button onClick={this.toggleHamburger}>Close Menu</button>
-          <ul>
+      <>
+        <nav
+          style={{
+            backgroundColor: navbarBackground
+              ? `${navbarBackground}`
+              : "transparent"
+          }}
+        >
+          <div className="brand">
+            <Link to="/">
+              {/* <img src={Logo} alt="" style={{ color: "#ddd" }} /> */}
+              <svg style={{ height: "35px", width: "35px" }}>
+                <Logo />
+              </svg>
+              <h1>DurangoBoas</h1>
+            </Link>
+          </div>
+          <ul className="links">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -85,9 +63,32 @@ const Navbar = class extends React.Component {
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
+          <div className="menu-btn" onClick={this.toggleHamburger}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+        </nav>
+        <div className={`menu-wrapper ${this.state.navBarActiveClass}`}>
+          <div className={`phone-menu ${this.state.navBarActiveClass}`}>
+            <button onClick={this.toggleHamburger}>Close Menu</button>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/available-summary">Available Animals</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        </div>
-      </nav>
+      </>
     );
   }
 };

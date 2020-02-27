@@ -4,6 +4,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  z-index: 2;
   position: relative;
 
   .brand {
@@ -84,51 +85,50 @@ nav {
       width: 100%;
     }
   }
+}
+.menu-wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  visibility: hidden;
+}
+.phone-menu {
+  height: 100vh;
+  overflow: hidden;
+  background: $lighter-green;
+  transform: translate3d(100%, 0, 0);
+  transition: all 0.5s ease-out;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-  .menu-wrapper {
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    width: 100%;
-    visibility: hidden;
+  button {
+    background: $primary-green;
+    color: $lighter-green;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 5rem;
   }
-  .phone-menu {
-    height: 100vh;
-    overflow: hidden;
-    background: $lighter-green;
-    transform: translate3d(100%, 0, 0);
-    transition: all 0.5s ease-out;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    button {
-      background: $primary-green;
-      color: $lighter-green;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 4px;
-      margin-bottom: 5rem;
-    }
-    ul {
-      list-style: none;
-      align-self: center;
-      li {
-        margin-bottom: 1.5rem;
-        a {
-          text-decoration: none;
-          color: $primary-green;
-          font-weight: 600;
-          font-size: 1.5rem;
-        }
+  ul {
+    list-style: none;
+    align-self: center;
+    li {
+      margin-bottom: 1.5rem;
+      a {
+        text-decoration: none;
+        color: $primary-green;
+        font-weight: 600;
+        font-size: 1.5rem;
       }
     }
   }
-  .is-active {
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
+}
+.is-active {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
 }
 @include phone {
   nav {
