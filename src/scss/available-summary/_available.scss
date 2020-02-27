@@ -55,3 +55,16 @@
     }
   }
 }
+
+@include phone {
+  .available-summary {
+    padding: 1.5rem;
+    h1 {
+      font-size: 1.4rem;
+    }
+    .post-container {
+      grid-template-columns: 80%;
+      margin: auto;
+    }
+  }
+}
