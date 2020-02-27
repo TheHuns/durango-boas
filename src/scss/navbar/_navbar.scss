@@ -4,8 +4,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  z-index: 2;
-  height: fit-content;
   position: relative;
 
   .brand {
@@ -87,15 +85,14 @@ nav {
     }
   }
 
-  .menu-wrapper{
+  .menu-wrapper {
     position: fixed;
     top: 0;
     z-index: 5;
     width: 100%;
     visibility: hidden;
-    
   }
-  .phone-menu {    
+  .phone-menu {
     height: 100vh;
     overflow: hidden;
     background: $lighter-green;

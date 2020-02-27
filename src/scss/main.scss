@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
   overflow-x: hidden;
 }
 
@@ -13,8 +15,8 @@ body {
   background: $light-green;
 }
 
-@import "./index-page/showcase";
-@import "./index-page/testimonials";
+@import "./index-page/showcase.scss";
+@import "./index-page/testimonials.scss";
 @import "./navbar/navbar.scss";
 @import "./available-summary/available.scss";
 @import "./contact/contact.scss";
