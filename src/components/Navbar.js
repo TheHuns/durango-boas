@@ -67,6 +67,8 @@ const Navbar = class extends React.Component {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
+        <div className={`menu-wrapper ${this.state.navBarActiveClass}`}>
+
         <div className={`phone-menu ${this.state.navBarActiveClass}`}>
           <button onClick={this.toggleHamburger}>Close Menu</button>
           <ul>
@@ -83,6 +85,7 @@ const Navbar = class extends React.Component {
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
+        </div>
         </div>
       </nav>
     );
