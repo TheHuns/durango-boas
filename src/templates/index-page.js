@@ -32,15 +32,17 @@ export const IndexPageTemplate = ({
         <h3>{heading}</h3>
       </div>
     </div>
-    <section className="testimonials">
-      <h3>Testimonials</h3>
-    </section>
-    <section className="testimonials">
-      <h3>Stories/Blog</h3>
-    </section>
-    <section className="testimonials">
-      <h3>About us/Our procedures</h3>
-    </section>
+    <div className="content">
+      <section className="testimonials">
+        <h3>Testimonials</h3>
+      </section>
+      <section className="testimonials">
+        <h3>Stories/Blog</h3>
+      </section>
+      <section className="testimonials">
+        <h3>About us/Our procedures</h3>
+      </section>
+    </div>
   </>
 );
 

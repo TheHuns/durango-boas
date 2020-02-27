@@ -1,10 +1,12 @@
 @import "../config/variables";
 
+.content {
+  padding-top: 2rem;
+}
 .testimonials {
   height: 300px;
   border: solid 1px black;
   background: $lighter-green;
-  position: relative;
   text-align: center;
   padding-top: 5rem;
   margin: 2rem;
