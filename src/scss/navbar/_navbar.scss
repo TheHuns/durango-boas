@@ -132,8 +132,12 @@ nav {
 }
 @include phone {
   nav {
+    .brand {
+      width: 70%;
+    }
     .links {
       visibility: hidden;
+      display: none;
     }
     .menu-btn {
       display: flex;

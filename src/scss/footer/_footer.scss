@@ -16,7 +16,7 @@ footer {
     }
     ul {
       list-style: none;
-
+      padding-left: 10px;
       a {
         text-decoration: none;
         color: #ddd;
@@ -35,9 +35,12 @@ footer {
     h4 {
       margin-bottom: 1rem;
     }
+    .media-links-container {
+      padding-left: 14px;
+    }
     a {
       display: flex;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
       text-decoration: none;
       color: #ddd;
       align-items: center;

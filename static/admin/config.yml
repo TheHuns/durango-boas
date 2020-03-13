@@ -32,9 +32,9 @@ collections:
   #     - { label: "Body", name: "body", widget: "markdown" }
   #     - { label: "Tags", name: "tags", widget: "list" }
 
-  - name: "animal"
-    label: "Animal"
-    folder: "src/pages/available-post"
+  - name: "collection-xanthic"
+    label: "Collection-Xanthic"
+    folder: "src/pages/collection/xanthic"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: name
@@ -46,6 +46,42 @@ collections:
           default: "available-post",
         }
       - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Genetics",
+          name: "genetics",
+          widget: "string",
+          default: "xanthic",
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          optional: true,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", optional: true }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+
+  - name: "collection-t-"
+    label: "Collection-T-"
+    folder: "src/pages/collection/t-"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Genetics",
+          name: "genetics",
+          widget: "string",
+          default: "xanthic",
+        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
           label: "Description",

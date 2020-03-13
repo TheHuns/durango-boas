@@ -43,10 +43,10 @@ const Navbar = class extends React.Component {
           <div className="brand">
             <Link to="/">
               {/* <img src={Logo} alt="" style={{ color: "#ddd" }} /> */}
-              <svg style={{ height: "35px", width: "35px" }}>
+              {/* <svg style={{ height: "35px", width: "35px" }}>
                 <Logo />
-              </svg>
-              <h1>DurangoBoas</h1>
+              </svg> */}
+              <h1>Sweet Tooth Constrictors</h1>
             </Link>
           </div>
           <ul className="links">
@@ -55,6 +55,9 @@ const Navbar = class extends React.Component {
             </li>
             <li>
               <Link to="/available-summary">Available Animals</Link>
+            </li>
+            <li>
+              <Link to="/collection-container">Collection</Link>
             </li>
             <li>
               <Link to="/about">About Us</Link>
@@ -78,6 +81,9 @@ const Navbar = class extends React.Component {
               </li>
               <li>
                 <Link to="/available-summary">Available Animals</Link>
+              </li>
+              <li>
+                <Link to="/collection-container">Collection</Link>
               </li>
               <li>
                 <Link to="/about">About Us</Link>

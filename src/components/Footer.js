@@ -23,6 +23,9 @@ const Footer = class extends React.Component {
                 <Link to="/available-summary">Available Animals</Link>
               </li>
               <li>
+                <Link to="/collection-container">Collection</Link>
+              </li>
+              <li>
                 <Link to="/about">About Us</Link>
               </li>
               <li>
@@ -32,24 +35,26 @@ const Footer = class extends React.Component {
           </div>
           <div className="right-column">
             <h4>Find us on social media!</h4>
-            <Link to="/">
-              <svg height="24" width="24">
-                <Facebook />
-              </svg>
-              Facebook
-            </Link>
-            <Link to="/">
-              <svg height="24" width="24">
-                <Instagram />
-              </svg>
-              Instagram
-            </Link>
-            <Link to="/">
-              <svg height="24" width="24">
-                <Twitter />
-              </svg>
-              Twitter
-            </Link>
+            <div className="media-links-container">
+              <Link to="/">
+                <svg height="24" width="24">
+                  <Facebook />
+                </svg>
+                Facebook
+              </Link>
+              <Link to="/">
+                <svg height="24" width="24">
+                  <Instagram />
+                </svg>
+                Instagram
+              </Link>
+              <Link to="/">
+                <svg height="24" width="24">
+                  <Twitter />
+                </svg>
+                Twitter
+              </Link>
+            </div>
           </div>
         </div>
         <div className="copyright">
