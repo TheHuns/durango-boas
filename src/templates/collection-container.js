@@ -38,6 +38,13 @@ export default () => {
       <div className="collection-container">
         <h1>Collection</h1>
         <div className="post-container">
+          <a
+            href="http://localhost:8000/available-summary#t+"
+            target="_blank"
+            name="t+"
+          >
+            Test
+          </a>
           {data.allMarkdownRemark.edges.map(post => (
             <AvailablePostTemplate
               name={post.node.frontmatter.name}

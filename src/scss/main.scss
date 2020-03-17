@@ -13,6 +13,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background: $light-green;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @import "./index-page/showcase.scss";

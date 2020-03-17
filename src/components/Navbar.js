@@ -54,7 +54,7 @@ const Navbar = class extends React.Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/available-summary">Available Animals</Link>
+              <Link to="/available-summary">Available</Link>
             </li>
             <li>
               <Link to="/collection-container">Collection</Link>
@@ -80,7 +80,7 @@ const Navbar = class extends React.Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/available-summary">Available Animals</Link>
+                <Link to="/available-summary">Available</Link>
               </li>
               <li>
                 <Link to="/collection-container">Collection</Link>

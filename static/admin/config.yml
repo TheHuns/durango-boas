@@ -87,10 +87,46 @@ collections:
           label: "Description",
           name: "description",
           widget: "text",
+          required: false,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", required: false }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+
+  - name: "available-xanthic"
+    label: "Available-Xanthic"
+    folder: "src/pages/collection/xanthic"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
           optional: true,
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          label: "Male genetics",
+          name: "malegenetics",
+          widget: "select",
+          options: ["Xantic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+      - {
+          label: "Female genetics",
+          name: "femalegenetics",
+          widget: "select",
+          options: ["Xantic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
 
   - name: "pages"
     label: "Pages"

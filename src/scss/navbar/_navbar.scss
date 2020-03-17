@@ -144,3 +144,11 @@ nav {
     }
   }
 }
+
+@include tablet {
+  .links {
+    li {
+      padding: 0 1rem;
+    }
+  }
+}

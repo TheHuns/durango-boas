@@ -5,14 +5,87 @@
   padding: 3rem;
   background: $lighter-green;
   min-height: 90vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  .horizontal-scroll {
+    display: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    background: #f4f4f4;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    p {
+      color: #888;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        padding: 1rem 1rem 0 1rem;
+
+        a {
+          text-decoration: none;
+          color: $primary-green;
+        }
+      }
+    }
+  }
+
+  .side-nav {
+    position: fixed;
+    top: 150px;
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 4px;
+
+    h3 {
+      color: #888;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 1rem;
+        a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 600;
+          &:hover {
+            color: $light-green;
+          }
+        }
+      }
+    }
+  }
 
   h1 {
     margin-bottom: 2rem;
+    width: 100% !important;
+    display: block;
   }
 
+  .type-section {
+    background: #f4f4f4;
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+
+    h2 {
+      margin-bottom: 2rem;
+      color: $primary-green;
+    }
+  }
   .post-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     // grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 2rem;
   }
@@ -59,6 +132,14 @@
 @include phone {
   .available-summary {
     padding: 1.5rem;
+    grid-template-columns: 1fr;
+
+    .horizontal-scroll {
+      display: block;
+    }
+    .side-nav {
+      display: none;
+    }
     h1 {
       font-size: 1.4rem;
     }
