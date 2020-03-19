@@ -5,6 +5,8 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import AvailablePostTemplate from "./available-post";
 import { SidebarNav } from "../components/SidebarNav";
+import { Link } from "gatsby";
+import { navigate } from "@reach/router";
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -26,6 +28,8 @@ export default () => {
                 }
               }
               dob
+              malegenetics
+              femalegenetics
             }
           }
         }
@@ -33,11 +37,10 @@ export default () => {
     }
   `);
 
-  console.log(data);
   return (
     <Layout navbarBackground="#032108">
       <div className="available-summary">
-        <SidebarNav />
+        <SidebarNav currentPage="available-summary" />
         <div className=""></div>
         <div>
           <h1>Available Animals</h1>
@@ -45,22 +48,22 @@ export default () => {
             <p>Jump To...</p>
             <ul>
               <li>
-                <a href="#wild-type">Wild Type</a>
+                <Link href="#wild-type">Wild Type</Link>
               </li>
               <li>
-                <a href="#hypo">Hypo</a>
+                <Link href="#hypo">Hypo</Link>
               </li>
               <li>
-                <a href="#t+">T +</a>
+                <Link href="#t+">T +</Link>
               </li>
               <li>
-                <a href="#t-">T -</a>
+                <Link href="#t-">T -</Link>
               </li>
               <li>
-                <a href="#pied">Pied</a>
+                <Link href="#pied">Pied</Link>
               </li>
               <li>
-                <a href="#xanthic">Xanthic</a>
+                <Link href="#xanthic">Xanthic</Link>
               </li>
             </ul>
           </div>
@@ -74,6 +77,8 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  malegenetics={post.node.frontmatter.malegenetics}
+                  femalegenetics={post.node.frontmatter.femalegenetics}
                 />
               ))}
             </div>
@@ -88,6 +93,8 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  malegenetics={post.node.frontmatter.malegenetics}
+                  femalegenetics={post.node.frontmatter.femalegenetics}
                 />
               ))}
             </div>
@@ -102,6 +109,8 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  malegenetics={post.node.frontmatter.malegenetics}
+                  femalegenetics={post.node.frontmatter.femalegenetics}
                 />
               ))}
             </div>
@@ -116,6 +125,8 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  malegenetics={post.node.frontmatter.malegenetics}
+                  femalegenetics={post.node.frontmatter.femalegenetics}
                 />
               ))}
             </div>
@@ -130,6 +141,8 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  malegenetics={post.node.frontmatter.malegenetics}
+                  femalegenetics={post.node.frontmatter.femalegenetics}
                 />
               ))}
             </div>
@@ -144,6 +157,8 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  malegenetics={post.node.frontmatter.malegenetics}
+                  femalegenetics={post.node.frontmatter.femalegenetics}
                 />
               ))}
             </div>

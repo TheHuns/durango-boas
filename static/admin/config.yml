@@ -43,15 +43,9 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "available-post",
+          default: "collection-post",
         }
       - { label: "Name", name: "name", widget: "string" }
-      - {
-          label: "Genetics",
-          name: "genetics",
-          widget: "string",
-          default: "xanthic",
-        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
           label: "Description",
@@ -61,6 +55,7 @@ collections:
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Genetics", name: "genetics", default: "xanthic" }
 
   - name: "collection-t-"
     label: "Collection-T-"
@@ -73,15 +68,9 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "available-post",
+          default: "collection-post",
         }
       - { label: "Name", name: "name", widget: "string" }
-      - {
-          label: "Genetics",
-          name: "genetics",
-          widget: "string",
-          default: "xanthic",
-        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
           label: "Description",
@@ -91,10 +80,111 @@ collections:
         }
       - { label: "DOB", name: "dob", widget: "datetime", required: false }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Genetics", name: "genetics", default: "t-" }
+
+  - name: "collection-t+"
+    label: "Collection-T+"
+    folder: "src/pages/collection/t+"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "collection-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", required: false }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Genetics", name: "genetics", default: "t+" }
+
+  - name: "collection-hypo"
+    label: "Collection-Hypo"
+    folder: "src/pages/collection/hypo"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "collection-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", required: false }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Genetics", name: "genetics", default: "hypo" }
+
+  - name: "collection-wild-type"
+    label: "Collection-Wild-Type"
+    folder: "src/pages/collection/wild-type"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "collection-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", required: false }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Genetics", name: "genetics", default: "wild-type" }
+
+  - name: "collection-pied"
+    label: "Collection-Pied"
+    folder: "src/pages/collection/pied"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "collection-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", required: false }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Genetics", name: "genetics", default: "pied" }
 
   - name: "available-xanthic"
     label: "Available-Xanthic"
-    folder: "src/pages/collection/xanthic"
+    folder: "src/pages/available/xanthic"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: name
@@ -119,13 +209,193 @@ collections:
           label: "Male genetics",
           name: "malegenetics",
           widget: "select",
-          options: ["Xantic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
       - {
           label: "Female genetics",
           name: "femalegenetics",
           widget: "select",
-          options: ["Xantic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+
+  - name: "available-wild-type"
+    label: "Available-Wild-Type"
+    folder: "src/pages/available/wild-type"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          optional: true,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", optional: true }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          label: "Male genetics",
+          name: "malegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+      - {
+          label: "Female genetics",
+          name: "femalegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+
+  - name: "available-hypo"
+    label: "Available-Hypo"
+    folder: "src/pages/available/hypo"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          optional: true,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", optional: true }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          label: "Male genetics",
+          name: "malegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+      - {
+          label: "Female genetics",
+          name: "femalegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+
+  - name: "available-t-"
+    label: "Available-T-"
+    folder: "src/pages/available/t-"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          optional: true,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", optional: true }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          label: "Male genetics",
+          name: "malegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+      - {
+          label: "Female genetics",
+          name: "femalegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+
+  - name: "available-t+"
+    label: "Available-t+"
+    folder: "src/pages/available/t+"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          optional: true,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", optional: true }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          label: "Male genetics",
+          name: "malegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+      - {
+          label: "Female genetics",
+          name: "femalegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+
+  - name: "available-pied"
+    label: "Available-Pied"
+    folder: "src/pages/available/pied"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: name
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "available-post",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          optional: true,
+        }
+      - { label: "DOB", name: "dob", widget: "datetime", optional: true }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          label: "Male genetics",
+          name: "malegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
+        }
+      - {
+          label: "Female genetics",
+          name: "femalegenetics",
+          widget: "select",
+          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
 
   - name: "pages"

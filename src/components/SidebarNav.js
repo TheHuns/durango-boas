@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SidebarNav = () => {
+export const SidebarNav = ({ currentPage }) => {
   return (
     <div className="side-nav">
       <h3>Jump to...</h3>
@@ -24,6 +24,11 @@ export const SidebarNav = () => {
           <a href="#xanthic">Xanthic</a>
         </li>
       </ul>
+      <p>
+        <a href="#nav">
+          <i>Back to top</i>
+        </a>
+      </p>
     </div>
   );
 };

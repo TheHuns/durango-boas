@@ -40,7 +40,8 @@
 
   .side-nav {
     position: fixed;
-    top: 150px;
+    // top: calc(39px + 3rem);
+    margin-top: calc(39px + 3rem);
     background: #f4f4f4;
     padding: 2rem;
     border-radius: 4px;
@@ -122,6 +123,7 @@
 
     h2 {
       font-size: 1.2rem;
+      margin-bottom: 0.7rem;
     }
     p {
       margin-top: 0.4rem;

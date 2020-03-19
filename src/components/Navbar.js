@@ -34,6 +34,7 @@ const Navbar = class extends React.Component {
     return (
       <>
         <nav
+          id="nav"
           style={{
             backgroundColor: navbarBackground
               ? `${navbarBackground}`
