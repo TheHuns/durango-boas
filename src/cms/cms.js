@@ -12,5 +12,6 @@ CMS.registerMediaLibrary(cloudinary);
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("available", AvailablePostPreview);
+CMS.registerPreviewTemplate("collection", CollectionPostPreview);
 
 CMS.registerPreviewStyle("../scss/main.scss");
