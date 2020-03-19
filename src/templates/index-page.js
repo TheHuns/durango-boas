@@ -1,18 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro
-}) => (
+export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
   <>
     <div className="index-page">
       <div className="overlay"></div>

@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import logo from "../img/logo.svg";
 import Facebook from "../img/Facebook.js";
 import Instagram from "../img/Instagram.js";
 import Twitter from "../img/Twitter.js";
-import vimeo from "../img/social/vimeo.svg";
 
 const Footer = class extends React.Component {
   render() {
@@ -60,7 +58,11 @@ const Footer = class extends React.Component {
         <div className="copyright">
           <p>
             &copy; Copyright 2020, DurangoBoas. All Rights Reserved | Media by
-            <a href="http://www.dehnhunsworth.com" target="_blank">
+            <a
+              href="http://www.dehnhunsworth.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               dehnhunsworth.com
             </a>
           </p>

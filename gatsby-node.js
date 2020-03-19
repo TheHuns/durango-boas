@@ -30,7 +30,9 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
     const filteredPosts = posts.filter(
-      post => post.node.frontmatter.templateKey != "available-post"
+      post =>
+        post.node.frontmatter.templateKey != "available-post" ||
+        "collection-post"
     );
 
     filteredPosts.forEach(edge => {

@@ -5,11 +5,9 @@ import CollectionPostTemplate from "./collection-post";
 import { Link } from "gatsby";
 import { SidebarNav } from "../components/SidebarNav";
 
-import { navigate } from "@reach/router";
-
 export default () => {
   const data = useStaticQuery(graphql`
-    query availableCollectionQuery {
+    query collectionPostQuery {
       allMarkdownRemark(
         filter: { frontmatter: { templateKey: { eq: "collection-post" } } }
       ) {
@@ -34,6 +32,7 @@ export default () => {
       }
     }
   `);
+  console.log(data);
 
   const getArray = name => {
     return data.allMarkdownRemark.edges.filter(
