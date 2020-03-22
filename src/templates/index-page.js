@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
+import DownArrow from "../img/DownArrow.png";
 
 export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
   <>
@@ -22,6 +23,9 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
       <div className="slogan">
         <h1>{title}</h1>
         <h3>{heading}</h3>
+      </div>
+      <div className="down-arrow">
+        <img src={DownArrow} alt="" />
       </div>
     </div>
     <div className="content">

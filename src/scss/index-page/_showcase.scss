@@ -42,6 +42,17 @@
       margin-bottom: 1.3rem;
     }
   }
+  .down-arrow {
+    z-index: 2;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      height: 22px;
+    }
+  }
 }
 
 @include phone {
