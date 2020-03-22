@@ -25,8 +25,8 @@ export const SidebarNav = ({ currentPage }) => {
         </li>
       </ul>
       <p>
-        <a href="#nav">
-          <i>Back to top</i>
+        <a href="#nav" id="nav">
+          Back to top
         </a>
       </p>
     </div>

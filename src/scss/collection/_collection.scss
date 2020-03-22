@@ -65,6 +65,13 @@
         }
       }
     }
+    #nav {
+      text-decoration: none;
+      color: #999;
+      &:hover {
+        color: $primary-green;
+      }
+    }
   }
 
   h1 {
@@ -118,6 +125,9 @@
 
     .label {
       font-size: 0.8rem;
+      font-weight: 700;
+      padding-right: 0.5rem;
+      color: $primary-green;
     }
 
     h2 {
@@ -125,7 +135,9 @@
       margin-bottom: 0.6rem;
     }
     p {
-      margin-top: 0.4rem;
+      margin-top: 0.5rem;
+      border-top: solid 1px #ddd;
+      padding-top: 0.5rem;
     }
   }
 }
