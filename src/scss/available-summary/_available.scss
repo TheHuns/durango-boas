@@ -82,6 +82,19 @@
     h2 {
       margin-bottom: 2rem;
       color: $primary-green;
+      padding-right: 1.5rem;
+
+      .link-to-collection {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+        color: $accent;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: #888;
+        }
+      }
     }
   }
   .post-container {
@@ -115,10 +128,21 @@
     .info {
       padding: 1.5rem;
       margin-top: 0.3rem;
+      position: relative;
+
+      .gender {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        height: 20px;
+      }
     }
 
     .label {
       font-size: 0.8rem;
+      font-weight: 700;
+      padding-right: 0.5rem;
+      color: $primary-green;
     }
 
     h2 {
@@ -126,7 +150,10 @@
       margin-bottom: 0.7rem;
     }
     p {
-      margin-top: 0.4rem;
+      margin-top: 0.3rem;
+      border-top: solid 1px #ddd;
+
+      padding-top: 0.3rem;
     }
   }
 }

@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as dateformat from "dateformat";
-import { navigate } from "@reach/router";
+
+import Male from "../img/MaleSymbol.png";
+import Female from "../img/FemaleSymbol.png";
 
 const AvailablePostTemplate = ({
   name,
-  salepending,
   dob,
   content,
-  contentComponent,
   image,
-  malegenetics,
-  femalegenetics
+  mothername,
+  fathername,
+  sex,
+  price
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
   return (
@@ -26,41 +28,18 @@ const AvailablePostTemplate = ({
         <h2>
           <span className="label">Name:</span> {name}
         </h2>
+        <img
+          className="gender"
+          src={sex == "M" ? Male : Female}
+          alt="gender-symbol"
+        />
         <p>
-          <span className="label">Genetics:</span>{" "}
-          <p>
-            Male (
-            <span
-              style={{
-                cursor: "pointer",
-                color: "slateblue",
-                textDecoration: "underline"
-              }}
-              onClick={() => {
-                navigate(`/collection-container#${malegenetics.toLowerCase()}`);
-              }}
-            >
-              {malegenetics}
-            </span>
-            )
+          <span className="label">Parents:</span>
+          <p style={{ borderTop: "none", width: "fit-content" }}>
+            M: {fathername}
           </p>
-          <p>
-            Female (
-            <span
-              style={{
-                cursor: "pointer",
-                color: "slateblue",
-                textDecoration: "underline"
-              }}
-              onClick={() => {
-                navigate(
-                  `/collection-container#${femalegenetics.toLowerCase()}`
-                );
-              }}
-            >
-              {femalegenetics}
-            </span>
-            )
+          <p style={{ borderTop: "none", display: "inline-block" }}>
+            F: {mothername}
           </p>
         </p>
         <p>
@@ -68,6 +47,9 @@ const AvailablePostTemplate = ({
         </p>
         <p>
           <span className="label">About:</span> {content}
+        </p>
+        <p>
+          <span className="label">Price: </span> ${price}
         </p>
       </div>
     </section>

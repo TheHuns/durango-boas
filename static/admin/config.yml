@@ -32,6 +32,9 @@ collections:
   #     - { label: "Body", name: "body", widget: "markdown" }
   #     - { label: "Tags", name: "tags", widget: "list" }
 
+  # -------------------------------------------------------------------------------------
+  # The following 6 sections are for collection animals
+
   - name: "collection-xanthic"
     label: "Collection-Xanthic"
     folder: "src/pages/collection/xanthic"
@@ -47,6 +50,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
           label: "Description",
           name: "description",
@@ -72,6 +76,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
           label: "Description",
           name: "description",
@@ -97,6 +102,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
           label: "Description",
           name: "description",
@@ -122,6 +128,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
           label: "Description",
           name: "description",
@@ -147,6 +154,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
           label: "Description",
           name: "description",
@@ -172,6 +180,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
           label: "Description",
           name: "description",
@@ -182,6 +191,9 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Genetics", name: "genetics", default: "pied" }
 
+  # -------------------------------------------------------------------------------------
+  # The following 6 sections are for available animals
+  # ||||||||||||||||||||||||||||||||||||||||||||||||||||||
   - name: "available-xanthic"
     label: "Available-Xanthic"
     folder: "src/pages/available/xanthic"
@@ -205,18 +217,16 @@ collections:
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
-          label: "Male genetics",
-          name: "malegenetics",
+          label: "Parnet genetics",
+          name: "parentgenetics",
           widget: "select",
           options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
-      - {
-          label: "Female genetics",
-          name: "femalegenetics",
-          widget: "select",
-          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
-        }
+      - { label: "Mother's Name", name: "mothername", widget: "string" }
+      - { label: "Father's Name", name: "fathername", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
 
   - name: "available-wild-type"
     label: "Available-Wild-Type"
@@ -241,18 +251,16 @@ collections:
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
-          label: "Male genetics",
-          name: "malegenetics",
+          label: "Parnet genetics",
+          name: "parentgenetics",
           widget: "select",
           options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
-      - {
-          label: "Female genetics",
-          name: "femalegenetics",
-          widget: "select",
-          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
-        }
+      - { label: "Mother's Name", name: "mothername", widget: "string" }
+      - { label: "Father's Name", name: "fathername", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
 
   - name: "available-hypo"
     label: "Available-Hypo"
@@ -276,19 +284,16 @@ collections:
           optional: true,
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
-          label: "Male genetics",
-          name: "malegenetics",
+          label: "Parnet genetics",
+          name: "parentgenetics",
           widget: "select",
           options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
-      - {
-          label: "Female genetics",
-          name: "femalegenetics",
-          widget: "select",
-          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
-        }
+      - { label: "Mother's Name", name: "mothername", widget: "string" }
+      - { label: "Father's Name", name: "fathername", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
 
   - name: "available-t-"
     label: "Available-T-"
@@ -313,18 +318,16 @@ collections:
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
-          label: "Male genetics",
-          name: "malegenetics",
+          label: "Parnet genetics",
+          name: "parentgenetics",
           widget: "select",
           options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
-      - {
-          label: "Female genetics",
-          name: "femalegenetics",
-          widget: "select",
-          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
-        }
+      - { label: "Mother's Name", name: "mothername", widget: "string" }
+      - { label: "Father's Name", name: "fathername", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
 
   - name: "available-t+"
     label: "Available-t+"
@@ -349,18 +352,16 @@ collections:
         }
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
-          label: "Male genetics",
-          name: "malegenetics",
+          label: "Parnet genetics",
+          name: "parentgenetics",
           widget: "select",
           options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
-      - {
-          label: "Female genetics",
-          name: "femalegenetics",
-          widget: "select",
-          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
-        }
+      - { label: "Mother's Name", name: "mothername", widget: "string" }
+      - { label: "Father's Name", name: "fathername", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
 
   - name: "available-pied"
     label: "Available-Pied"
@@ -383,20 +384,23 @@ collections:
           widget: "text",
           optional: true,
         }
+
       - { label: "DOB", name: "dob", widget: "datetime", optional: true }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sex", name: "sex", widget: "select", options: ["M", "F"] }
       - {
-          label: "Male genetics",
-          name: "malegenetics",
+          label: "Parnet genetics",
+          name: "parentgenetics",
           widget: "select",
           options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
         }
-      - {
-          label: "Female genetics",
-          name: "femalegenetics",
-          widget: "select",
-          options: ["Xanthic", "T+", "T-", "Pied", "Wild Type", "Hypo"],
-        }
+      - { label: "Mother's Name", name: "mothername", widget: "string" }
+      - { label: "Father's Name", name: "fathername", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+
+  # -----------------------------------------------------------------------------
+  # Start of pages area ( needs to be cleaned of useless code)
+  #  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
   - name: "pages"
     label: "Pages"

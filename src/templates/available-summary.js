@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
 import AvailablePostTemplate from "./available-post";
 import { SidebarNav } from "../components/SidebarNav";
 import { Link } from "gatsby";
@@ -28,14 +26,27 @@ export default () => {
                 }
               }
               dob
-              malegenetics
-              femalegenetics
+              parentgenetics
+              sex
+              mothername
+              fathername
+              price
             }
           }
         }
       }
     }
   `);
+
+  const getArray = name => {
+    return data.allMarkdownRemark.edges.filter(
+      item => item.node.frontmatter.parentgenetics == name
+    );
+  };
+
+  const clickHandler = section => {
+    navigate(`/collection-container#${section}`);
+  };
 
   return (
     <Layout navbarBackground="#032108">
@@ -68,7 +79,15 @@ export default () => {
             </ul>
           </div>
           <div className="type-section" id="wild-type">
-            <h2>Wild Type</h2>
+            <h2>
+              Wild Type{" "}
+              <span
+                className="link-to-collection"
+                onClick={() => clickHandler("wild-type")}
+              >
+                See Wild Type Collection
+              </span>{" "}
+            </h2>
 
             <div className="post-container">
               {data.allMarkdownRemark.edges.map(post => (
@@ -77,14 +96,24 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
-                  malegenetics={post.node.frontmatter.malegenetics}
-                  femalegenetics={post.node.frontmatter.femalegenetics}
+                  mothername={post.node.frontmatter.mothername}
+                  fathername={post.node.frontmatter.fathername}
+                  sex={post.node.frontmatter.sex}
+                  price={post.node.frontmatter.price}
                 />
               ))}
             </div>
           </div>
           <div className="type-section" id="hypo">
-            <h2>Hypo</h2>
+            <h2>
+              Hypo
+              <span
+                className="link-to-collection"
+                onClick={() => clickHandler("hypo")}
+              >
+                See Hypo Collection
+              </span>
+            </h2>
 
             <div className="post-container">
               {data.allMarkdownRemark.edges.map(post => (
@@ -93,14 +122,24 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
-                  malegenetics={post.node.frontmatter.malegenetics}
-                  femalegenetics={post.node.frontmatter.femalegenetics}
+                  mothername={post.node.frontmatter.mothername}
+                  fathername={post.node.frontmatter.fathername}
+                  sex={post.node.frontmatter.sex}
+                  price={post.node.frontmatter.price}
                 />
               ))}
             </div>
           </div>
           <div className="type-section" id="t+" name="t+">
-            <h2>T +</h2>
+            <h2>
+              T +
+              <span
+                className="link-to-collection"
+                onClick={() => clickHandler("t+")}
+              >
+                See T + Collection
+              </span>
+            </h2>
 
             <div className="post-container">
               {data.allMarkdownRemark.edges.map(post => (
@@ -109,14 +148,24 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
-                  malegenetics={post.node.frontmatter.malegenetics}
-                  femalegenetics={post.node.frontmatter.femalegenetics}
+                  mothername={post.node.frontmatter.mothername}
+                  fathername={post.node.frontmatter.fathername}
+                  sex={post.node.frontmatter.sex}
+                  price={post.node.frontmatter.price}
                 />
               ))}
             </div>
           </div>
           <div className="type-section" id="t-">
-            <h2>T -</h2>
+            <h2>
+              T -
+              <span
+                className="link-to-collection"
+                onClick={() => clickHandler("t-")}
+              >
+                See T - Collection
+              </span>
+            </h2>
 
             <div className="post-container">
               {data.allMarkdownRemark.edges.map(post => (
@@ -125,14 +174,24 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
-                  malegenetics={post.node.frontmatter.malegenetics}
-                  femalegenetics={post.node.frontmatter.femalegenetics}
+                  mothername={post.node.frontmatter.mothername}
+                  fathername={post.node.frontmatter.fathername}
+                  sex={post.node.frontmatter.sex}
+                  price={post.node.frontmatter.price}
                 />
               ))}
             </div>
           </div>
           <div className="type-section" id="pied">
-            <h2>Pied</h2>
+            <h2>
+              Pied
+              <span
+                className="link-to-collection"
+                onClick={() => clickHandler("pied")}
+              >
+                See Pied Collection
+              </span>
+            </h2>
 
             <div className="post-container">
               {data.allMarkdownRemark.edges.map(post => (
@@ -141,14 +200,24 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
-                  malegenetics={post.node.frontmatter.malegenetics}
-                  femalegenetics={post.node.frontmatter.femalegenetics}
+                  mothername={post.node.frontmatter.mothername}
+                  fathername={post.node.frontmatter.fathername}
+                  sex={post.node.frontmatter.sex}
+                  price={post.node.frontmatter.price}
                 />
               ))}
             </div>
           </div>
           <div className="type-section" id="xanthic">
-            <h2>Xanthic</h2>
+            <h2>
+              Xanthic
+              <span
+                className="link-to-collection"
+                onClick={() => clickHandler("xanthic")}
+              >
+                See Xanthic Collection
+              </span>
+            </h2>
 
             <div className="post-container">
               {data.allMarkdownRemark.edges.map(post => (
@@ -157,8 +226,10 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
-                  malegenetics={post.node.frontmatter.malegenetics}
-                  femalegenetics={post.node.frontmatter.femalegenetics}
+                  mothername={post.node.frontmatter.mothername}
+                  fathername={post.node.frontmatter.fathername}
+                  sex={post.node.frontmatter.sex}
+                  price={post.node.frontmatter.price}
                 />
               ))}
             </div>
