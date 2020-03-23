@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 import CollectionPostTemplate from "./collection-post";
 import { Link } from "gatsby";
 import { SidebarNav } from "../components/SidebarNav";
+import DetailModal from "../components/DetailModal";
 
 export default () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [detailInfo, setDetailInfo] = useState({});
+
   const data = useStaticQuery(graphql`
     query collectionPostQuery {
       allMarkdownRemark(
@@ -32,7 +36,6 @@ export default () => {
       }
     }
   `);
-  console.log(data);
 
   const getArray = name => {
     return data.allMarkdownRemark.edges.filter(
@@ -40,8 +43,25 @@ export default () => {
     );
   };
 
+  const setDetailsAndOpen = (name, image, content, price, sex, dob) => {
+    setModalOpen(true);
+    setDetailInfo({
+      name,
+      image,
+      content,
+      price,
+      sex,
+      dob
+    });
+  };
+
+  const showDetailModal = () => {
+    return <DetailModal setModal={setModalOpen} details={detailInfo} />;
+  };
+
   return (
     <Layout navbarBackground="#032108">
+      {modalOpen ? showDetailModal() : null}
       <div className="collection-container">
         <SidebarNav />
         <div className=""></div>
@@ -80,6 +100,7 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -94,6 +115,7 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -108,6 +130,7 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -122,6 +145,7 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -136,6 +160,7 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -150,6 +175,7 @@ export default () => {
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
