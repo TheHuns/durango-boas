@@ -13,11 +13,15 @@ const AvailablePostTemplate = ({
   mothername,
   fathername,
   sex,
-  price
+  price,
+  setModal
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
   return (
-    <section className="post">
+    <a
+      className="post"
+      onClick={() => setModal(name, image, content, price, sex, dob)}
+    >
       <div
         className="feature-image"
         style={{
@@ -35,24 +39,28 @@ const AvailablePostTemplate = ({
         />
         <p>
           <span className="label">Parents:</span>
-          <p style={{ borderTop: "none", width: "fit-content" }}>
+          <span
+            style={{
+              borderTop: "none",
+              width: "fit-content",
+              paddingRight: "5px"
+            }}
+          >
             M: {fathername}
-          </p>
-          <p style={{ borderTop: "none", display: "inline-block" }}>
+          </span>
+          <span style={{ borderTop: "none", display: "inline-block" }}>
             F: {mothername}
-          </p>
+          </span>
         </p>
-        <p>
-          <span className="label">Date of Birth:</span> {date}
-        </p>
-        <p>
+        <p className="about">
+          <div className="dots">...</div>
           <span className="label">About:</span> {content}
         </p>
         <p>
           <span className="label">Price: </span> ${price}
         </p>
       </div>
-    </section>
+    </a>
   );
 };
 

@@ -8,11 +8,16 @@ const CollectionPostTemplate = ({
   dob,
   content,
   contentComponent,
-  image
+  image,
+  setModal,
+  sex
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
   return (
-    <section className="collection-post">
+    <a
+      className="collection-post"
+      onClick={() => setModal(name, image, content, sex, dob)}
+    >
       <div
         className="feature-image"
         style={{
@@ -31,7 +36,7 @@ const CollectionPostTemplate = ({
           <span className="label">About:</span> {content}
         </p>
       </div>
-    </section>
+    </a>
   );
 };
 

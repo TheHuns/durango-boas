@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 import AvailablePostTemplate from "./available-post";
 import { SidebarNav } from "../components/SidebarNav";
 import { Link } from "gatsby";
 import { navigate } from "@reach/router";
+import DetailModal from "../components/DetailModal";
 
 export default () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [detailInfo, setDetailInfo] = useState({});
+
   const data = useStaticQuery(graphql`
     query availablePostQuery {
       allMarkdownRemark(
@@ -48,8 +52,26 @@ export default () => {
     navigate(`/collection-container#${section}`);
   };
 
+  const setDetailsAndOpen = (name, image, content, price, sex, dob) => {
+    setModalOpen(true);
+    setDetailInfo({
+      name,
+      image,
+      content,
+      price,
+      sex,
+      dob
+    });
+  };
+
+  const showDetailModal = () => {
+    return <DetailModal setModal={setModalOpen} details={detailInfo} />;
+  };
+
   return (
     <Layout navbarBackground="#032108">
+      {modalOpen ? showDetailModal() : null}
+
       <div className="available-summary">
         <SidebarNav currentPage="available-summary" />
         <div className=""></div>
@@ -85,7 +107,7 @@ export default () => {
                 className="link-to-collection"
                 onClick={() => clickHandler("wild-type")}
               >
-                See Wild Type Collection
+                See Our Wild Type Collection
               </span>{" "}
             </h2>
 
@@ -100,6 +122,7 @@ export default () => {
                   fathername={post.node.frontmatter.fathername}
                   sex={post.node.frontmatter.sex}
                   price={post.node.frontmatter.price}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -111,7 +134,7 @@ export default () => {
                 className="link-to-collection"
                 onClick={() => clickHandler("hypo")}
               >
-                See Hypo Collection
+                See Our Hypo Collection
               </span>
             </h2>
 
@@ -126,6 +149,7 @@ export default () => {
                   fathername={post.node.frontmatter.fathername}
                   sex={post.node.frontmatter.sex}
                   price={post.node.frontmatter.price}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -137,7 +161,7 @@ export default () => {
                 className="link-to-collection"
                 onClick={() => clickHandler("t+")}
               >
-                See T + Collection
+                See Our T + Collection
               </span>
             </h2>
 
@@ -152,6 +176,7 @@ export default () => {
                   fathername={post.node.frontmatter.fathername}
                   sex={post.node.frontmatter.sex}
                   price={post.node.frontmatter.price}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -163,7 +188,7 @@ export default () => {
                 className="link-to-collection"
                 onClick={() => clickHandler("t-")}
               >
-                See T - Collection
+                See Our T - Collection
               </span>
             </h2>
 
@@ -178,6 +203,7 @@ export default () => {
                   fathername={post.node.frontmatter.fathername}
                   sex={post.node.frontmatter.sex}
                   price={post.node.frontmatter.price}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -189,7 +215,7 @@ export default () => {
                 className="link-to-collection"
                 onClick={() => clickHandler("pied")}
               >
-                See Pied Collection
+                See Our Pied Collection
               </span>
             </h2>
 
@@ -204,6 +230,7 @@ export default () => {
                   fathername={post.node.frontmatter.fathername}
                   sex={post.node.frontmatter.sex}
                   price={post.node.frontmatter.price}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
@@ -215,7 +242,7 @@ export default () => {
                 className="link-to-collection"
                 onClick={() => clickHandler("xanthic")}
               >
-                See Xanthic Collection
+                See Our Xanthic Collection
               </span>
             </h2>
 
@@ -230,6 +257,7 @@ export default () => {
                   fathername={post.node.frontmatter.fathername}
                   sex={post.node.frontmatter.sex}
                   price={post.node.frontmatter.price}
+                  setModal={setDetailsAndOpen}
                 />
               ))}
             </div>
