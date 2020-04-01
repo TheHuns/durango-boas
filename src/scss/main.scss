@@ -1,38 +1,44 @@
-@import "./config/variables";
-@import "./config/media";
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+@import "./config/variables";
+@import "./config/media";
+
 html,
 body {
   width: 100%;
   height: fit-content;
   font-family: "Montserrat", sans-serif;
   background: $light-green;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   scroll-behavior: smooth;
 }
+.layout-container {
+  padding-top: 7rem;
+  background-color: $lighter-green;
+  padding-bottom: 2rem;
+}
 
-@import "./index-page/showcase.scss";
-@import "./index-page/testimonials.scss";
-@import "./navbar/navbar.scss";
-@import "./available-summary/available.scss";
-@import "./collection/collection.scss";
-@import "./contact/contact.scss";
-@import "./footer/footer.scss";
-@import "./detailModal.scss";
+@import "index-page/showcase";
+@import "index-page/testimonials";
+@import "navbar/navbar";
+@import "available-summary/available";
+@import "collection/collection";
+@import "contact/contact";
+@import "footer/footer";
+@import "detailModal";
 
 // About Page ----------------------------------------------------
 .about-page {
   padding: 3rem;
   margin: 3rem;
-  background: $lighter-green;
+  background: #f4f4f4;
   min-height: 90vh;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
   border-radius: 5px;
+  margin-bottom: 0;
 
   h2 {
     padding-bottom: 2rem;

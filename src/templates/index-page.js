@@ -1,46 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import DownArrow from "../img/DownArrow.png";
+import { useEffect } from "react";
 
-export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
-  <>
-    <div className="index-page">
-      <div className="overlay"></div>
-      <div
-        className="showcase-image"
-        style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundSize: "cover"
-        }}
-      >
-        <p className="caption">{subheading}</p>
+export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
+  return (
+    <div>
+      <div className="index-page">
+        <div className="overlay"></div>
+        <div
+          className="showcase-image"
+          style={{
+            backgroundImage: `url(${
+              !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+            })`,
+            backgroundSize: "cover"
+          }}
+        >
+          <p className="caption">{subheading}</p>
+        </div>
+        <div className="slogan">
+          <h1>{title}</h1>
+          <h3>{heading}</h3>
+        </div>
+        <div className="down-arrow">
+          <img src={DownArrow} alt="" />
+        </div>
       </div>
-      <div className="slogan">
-        <h1>{title}</h1>
-        <h3>{heading}</h3>
-      </div>
-      <div className="down-arrow">
-        <img src={DownArrow} alt="" />
+      <div className="content">
+        <section className="testimonials">
+          <h3>Testimonials</h3>
+        </section>
+        <section className="testimonials">
+          <h3>Stories/Blog</h3>
+        </section>
+        <section className="testimonials">
+          <h3>About us/Our procedures</h3>
+        </section>
       </div>
     </div>
-    <div className="content">
-      <section className="testimonials">
-        <h3>Testimonials</h3>
-      </section>
-      <section className="testimonials">
-        <h3>Stories/Blog</h3>
-      </section>
-      <section className="testimonials">
-        <h3>About us/Our procedures</h3>
-      </section>
-    </div>
-  </>
-);
+  );
+};
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -57,8 +60,27 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
+  const [height, setHeight] = useState(0);
+
+  const [scrolled, setScrolled] = useState();
+
+  useEffect(_ => {
+    setHeight(window.innerHeight);
+    const handleScroll = _ => {
+      if (window.pageYOffset > height) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return _ => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Layout>
+    <Layout navbarBackground={scrolled ? "#032108" : "transparent"}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

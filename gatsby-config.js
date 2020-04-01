@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Durango Boas",
+    title:
+      "Sweet Tooth Constrictors | Durango and Four Corners area | Breeders of a Brazilian Boas with a variety of appearance traits",
     description: "Update this description about your business"
   },
   plugins: [
@@ -65,6 +66,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
+
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
       options: {

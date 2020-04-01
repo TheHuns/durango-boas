@@ -52,19 +52,29 @@ const Navbar = class extends React.Component {
           </div>
           <ul className="links">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" activeClassName="active-link">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/available-summary">Available</Link>
+              <Link to="/available-summary" activeClassName="active-link">
+                Available
+              </Link>
             </li>
             <li>
-              <Link to="/collection-container">Collection</Link>
+              <Link to="/collection-container" activeClassName="active-link">
+                Collection
+              </Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about" activeClassName="active-link">
+                About Us
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact" activeClassName="active-link">
+                Contact
+              </Link>
             </li>
           </ul>
           <div className="menu-btn" onClick={this.toggleHamburger}>

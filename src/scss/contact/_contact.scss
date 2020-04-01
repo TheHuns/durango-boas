@@ -7,7 +7,7 @@
 
 .contact-page {
   margin: 3rem;
-  background: $lighter-green;
+  background: #f4f4f4;
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -19,7 +19,7 @@
 
   .left-column {
     display: grid;
-    grid-template-rows: 180px 1fr;
+    grid-template-rows: 150px 1fr;
 
     .greeting {
       width: 100%;
@@ -54,6 +54,10 @@
             border: 1px solid rgba(68, 68, 68, 0.644);
             border-radius: 4px;
             margin-top: 0.5rem;
+
+            &:focus {
+              transform: scale(1.02);
+            }
           }
           textarea {
             height: 100%;

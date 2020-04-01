@@ -15,6 +15,7 @@ const CollectionPostTemplate = ({
   const date = dateformat(dob, "mmmm dS, yyyy");
   return (
     <a
+      id={name}
       className="collection-post"
       onClick={() => setModal(name, image, content, sex, dob)}
     >

@@ -63,30 +63,29 @@ export default () => {
     <Layout navbarBackground="#032108">
       {modalOpen ? showDetailModal() : null}
       <div className="collection-container">
-        <SidebarNav />
-        <div className=""></div>
+        <SidebarNav currentPage="/collection-container" />
         <div>
           <h1>Collection</h1>
           <div className="horizontal-scroll">
             <p>Jump To...</p>
             <ul>
               <li>
-                <Link href="#wild-type">Wild Type</Link>
+                <Link to="#wild-type">Wild Type</Link>
               </li>
               <li>
-                <Link href="#hypo">Hypo</Link>
+                <Link to="#hypo">Hypo</Link>
               </li>
               <li>
-                <Link href="#t+">T +</Link>
+                <Link to="#t+">T +</Link>
               </li>
               <li>
-                <Link href="#t-">T -</Link>
+                <Link to="#t-">T -</Link>
               </li>
               <li>
-                <Link href="#pied">Pied</Link>
+                <Link to="#pied">Pied</Link>
               </li>
               <li>
-                <Link href="#xanthic">Xanthic</Link>
+                <Link to="#xanthic">Xanthic</Link>
               </li>
             </ul>
           </div>
@@ -94,13 +93,14 @@ export default () => {
             <h2>Wild Type</h2>
 
             <div className="post-container">
-              {getArray("wild-type").map(post => (
+              {getArray("wild-type").map((post, index) => (
                 <CollectionPostTemplate
                   name={post.node.frontmatter.name}
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
                   setModal={setDetailsAndOpen}
+                  key={index}
                 />
               ))}
             </div>
@@ -109,13 +109,14 @@ export default () => {
             <h2>Hypo</h2>
 
             <div className="post-container">
-              {getArray("hypo").map(post => (
+              {getArray("hypo").map((post, index) => (
                 <CollectionPostTemplate
                   name={post.node.frontmatter.name}
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
                   setModal={setDetailsAndOpen}
+                  key={index}
                 />
               ))}
             </div>
@@ -124,13 +125,14 @@ export default () => {
             <h2>T +</h2>
 
             <div className="post-container">
-              {getArray("t+").map(post => (
+              {getArray("t+").map((post, index) => (
                 <CollectionPostTemplate
                   name={post.node.frontmatter.name}
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
                   setModal={setDetailsAndOpen}
+                  key={index}
                 />
               ))}
             </div>
@@ -139,13 +141,14 @@ export default () => {
             <h2>T -</h2>
 
             <div className="post-container">
-              {getArray("t-").map(post => (
+              {getArray("t-").map((post, index) => (
                 <CollectionPostTemplate
                   name={post.node.frontmatter.name}
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
                   setModal={setDetailsAndOpen}
+                  key={index}
                 />
               ))}
             </div>
@@ -154,13 +157,14 @@ export default () => {
             <h2>Pied</h2>
 
             <div className="post-container">
-              {getArray("pied").map(post => (
+              {getArray("pied").map((post, index) => (
                 <CollectionPostTemplate
                   name={post.node.frontmatter.name}
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
                   setModal={setDetailsAndOpen}
+                  key={index}
                 />
               ))}
             </div>
@@ -169,13 +173,14 @@ export default () => {
             <h2>Xanthic</h2>
 
             <div className="post-container">
-              {getArray("xanthic").map(post => (
+              {getArray("xanthic").map((post, index) => (
                 <CollectionPostTemplate
                   name={post.node.frontmatter.name}
                   content={post.node.frontmatter.description}
                   dob={post.node.frontmatter.dob}
                   image={post.node.frontmatter.featuredimage}
                   setModal={setDetailsAndOpen}
+                  key={index}
                 />
               ))}
             </div>

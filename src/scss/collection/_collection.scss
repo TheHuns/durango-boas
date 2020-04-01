@@ -6,6 +6,7 @@
   background: $lighter-green;
   min-height: 90vh;
   display: grid;
+  gap: 2rem;
   grid-template-columns: 200px 1fr;
 
   .horizontal-scroll {
@@ -39,12 +40,14 @@
   }
 
   .side-nav {
-    position: fixed;
-    // top: calc(39px + 3rem);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 7rem;
     margin-top: calc(39px + 3rem);
     background: #f4f4f4;
     padding: 2rem;
     border-radius: 4px;
+    height: fit-content;
 
     h3 {
       color: #888;

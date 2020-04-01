@@ -15,4 +15,4 @@ CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("available", AvailablePostPreview);
 CMS.registerPreviewTemplate("collection", CollectionPostPreview);
 
-CMS.registerPreviewStyle("../scss/main.scss");
+CMS.registerPreviewStyle("./css/main.css");

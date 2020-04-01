@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as dateformat from "dateformat";
+import { navigate } from "@reach/router";
 
 import Male from "../img/MaleSymbol.png";
 import Female from "../img/FemaleSymbol.png";
@@ -14,15 +15,20 @@ const AvailablePostTemplate = ({
   fathername,
   sex,
   price,
-  setModal
+  setModal,
+  sold
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
+
+  const clickHandler = section => {
+    navigate(`/collection-container#${section}`);
+  };
   return (
-    <a
-      className="post"
-      onClick={() => setModal(name, image, content, price, sex, dob)}
-    >
+    <div className="post">
+      {sold === "true" ? <div className="sold-tag">SOLD</div> : null}
       <div
+        title="Click image for more details"
+        onClick={() => setModal(name, image, content, price, sex, dob)}
         className="feature-image"
         style={{
           backgroundImage: `url(${image.childImageSharp.fluid.src})`
@@ -46,21 +52,33 @@ const AvailablePostTemplate = ({
               paddingRight: "5px"
             }}
           >
-            M: {fathername}
+            M:{" "}
+            <i
+              style={{ cursor: "pointer" }}
+              onClick={() => clickHandler(fathername)}
+            >
+              {fathername}
+            </i>
           </span>
           <span style={{ borderTop: "none", display: "inline-block" }}>
-            F: {mothername}
+            F:{" "}
+            <i
+              style={{ cursor: "pointer" }}
+              onClick={() => clickHandler(fathername)}
+            >
+              {mothername}
+            </i>
           </span>
         </p>
-        <p className="about">
+        <div className="about">
           <div className="dots">...</div>
           <span className="label">About:</span> {content}
-        </p>
+        </div>
         <p>
           <span className="label">Price: </span> ${price}
         </p>
       </div>
-    </a>
+    </div>
   );
 };
 

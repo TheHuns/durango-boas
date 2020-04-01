@@ -19,26 +19,32 @@ const TemplateWrapper = ({ children, navbarBackground }) => {
           sizes="180x180"
           href={`${withPrefix("/")}img/apple-touch-icon.png`}
         />{" "} */}
-        {/* 
+
+        <link
+          rel="icon"
+          href={`${withPrefix("/")}img/boas-logo2.svg`}
+          sizes="any"
+          type="image/svg+xml"
+        />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix("/")}img/favicon-32x32.png`}
+          href={`${withPrefix("/")}img/STCfavicon.png`}
           sizes="32x32"
-        /> */}
+        />
 
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix("/")}img/snake.png`}
+          href={`${withPrefix("/")}img/STCfavicon.png`}
           sizes="16x16"
         />
-        {/*
+
         <link
           rel="mask-icon"
-          href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
+          href={`${withPrefix("/")}img/STCfavicon.png`}
           color="#ff4400"
-        /> */}
+        />
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
           rel="stylesheet"
@@ -49,11 +55,11 @@ const TemplateWrapper = ({ children, navbarBackground }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix("/")}img/og-image.jpg`}
+          content={`${withPrefix("/")}img/STCfavicon.png`}
         />
       </Helmet>
       <Navbar navbarBackground={navbarBackground} />
-      <div>{children}</div>
+      <div className="layout-container">{children}</div>
       <Footer />
     </div>
   );
