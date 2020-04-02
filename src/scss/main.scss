@@ -12,7 +12,6 @@ body {
   height: fit-content;
   font-family: "Montserrat", sans-serif;
   background: $light-green;
-
   scroll-behavior: smooth;
 }
 .layout-container {
@@ -48,5 +47,19 @@ body {
   }
   p {
     padding-bottom: 1.2rem;
+  }
+}
+
+@include phone {
+  .about-page {
+    padding: 1.5rem;
+    margin: 1rem;
+
+    h2 {
+      padding-bottom: 1rem;
+    }
+    .content {
+      padding-top: 1rem;
+    }
   }
 }

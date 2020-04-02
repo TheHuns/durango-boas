@@ -27,6 +27,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           <h3>{heading}</h3>
         </div>
         <div className="down-arrow">
+          <p>Scroll down to see more!</p>
           <img src={DownArrow} alt="" />
         </div>
       </div>
@@ -67,7 +68,7 @@ const IndexPage = ({ data }) => {
   useEffect(_ => {
     setHeight(window.innerHeight);
     const handleScroll = _ => {
-      if (window.pageYOffset > height) {
+      if (window.pageYOffset > height + 100) {
         setScrolled(true);
       } else {
         setScrolled(false);

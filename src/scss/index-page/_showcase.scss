@@ -43,9 +43,22 @@
   .down-arrow {
     z-index: 2;
     position: absolute;
-    bottom: 2rem;
+    bottom: 4rem;
     left: 50%;
+    text-align: center;
     transform: translateX(-50%);
+
+    p {
+      padding-bottom: 0.5rem;
+      opacity: 0;
+      color: rgb(236, 235, 235);
+      transition: all ease-in 0.6s;
+    }
+    &:hover {
+      p {
+        opacity: 1;
+      }
+    }
 
     img {
       height: 22px;

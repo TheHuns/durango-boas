@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 import AvailablePostTemplate from "./available-post";
@@ -6,16 +6,27 @@ import { SidebarNav } from "../components/SidebarNav";
 import { Link } from "gatsby";
 import { navigate } from "@reach/router";
 import DetailModal from "../components/DetailModal";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 export default () => {
+  // State for Modal
   const [modalOpen, setModalOpen] = useState(false);
   const [detailInfo, setDetailInfo] = useState({});
+
+  // State to hold animal lists for individual traits
   const [xanthic, setXanthic] = useState(null);
   const [wildType, setWildType] = useState(null);
   const [hypo, setHypo] = useState(null);
   const [tplus, setTplus] = useState(null);
   const [tminus, settminus] = useState(null);
   const [pied, setPied] = useState(null);
+
+  // Setup for motion draggable div phone menu
+  const constraintsRef = useRef(null);
+  const x = useMotionValue(0);
+  const rotateY = useTransform(x, [-200, 0, 200], [-45, 0, 45], {
+    clamp: false
+  });
 
   const data = useStaticQuery(graphql`
     query availablePostQuery {
@@ -71,20 +82,6 @@ export default () => {
 
     return arr;
   };
-  // const getAvailTypes = () => {
-  //   const typeArray = ["xanthic", "pied", "t+", "t-", "wild-type", "hypo"];
-
-  //   typeArray.forEach(name => {
-  //     let temp = data.allMarkdownRemark.edges.filter(
-  //       item => item.node.frontmatter.parentgenetics === name
-  //     );
-
-  //     if (temp.length > 0) {
-  //       setAvailTypes({ [name]: true });
-  //     }
-  //   });
-  //   console.log(availTypes);
-  // };
 
   const clickHandler = section => {
     navigate(`/collection-container#${section}`);
@@ -121,9 +118,21 @@ export default () => {
           pied={pied}
         />
 
-        <div className="horizontal-scroll">
+        <motion.div
+          className="horizontal-scroll"
+          ref={constraintsRef}
+          style={{
+            rotateY
+          }}
+        >
           <p>Jump To...</p>
-          <ul>
+          <motion.ul
+            drag="x"
+            dragConstraints={constraintsRef}
+            style={{
+              x
+            }}
+          >
             <li>
               <Link href="#wild-type">Wild Type</Link>
             </li>
@@ -142,8 +151,8 @@ export default () => {
             <li>
               <Link href="#xanthic">Xanthic</Link>
             </li>
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
         <div className="main-column">
           <h1>Available Animals</h1>
           <p>Click or tap in image for a detailed view.</p>
