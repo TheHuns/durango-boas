@@ -121,31 +121,32 @@ export default () => {
           pied={pied}
         />
 
-        <div>
+        <div className="horizontal-scroll">
+          <p>Jump To...</p>
+          <ul>
+            <li>
+              <Link href="#wild-type">Wild Type</Link>
+            </li>
+            <li>
+              <Link href="#hypo">Hypo</Link>
+            </li>
+            <li>
+              <Link href="#t+">T +</Link>
+            </li>
+            <li>
+              <Link href="#t-">T -</Link>
+            </li>
+            <li>
+              <Link href="#pied">Pied</Link>
+            </li>
+            <li>
+              <Link href="#xanthic">Xanthic</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="main-column">
           <h1>Available Animals</h1>
-          <div className="horizontal-scroll">
-            <p>Jump To...</p>
-            <ul>
-              <li>
-                <Link href="#wild-type">Wild Type</Link>
-              </li>
-              <li>
-                <Link href="#hypo">Hypo</Link>
-              </li>
-              <li>
-                <Link href="#t+">T +</Link>
-              </li>
-              <li>
-                <Link href="#t-">T -</Link>
-              </li>
-              <li>
-                <Link href="#pied">Pied</Link>
-              </li>
-              <li>
-                <Link href="#xanthic">Xanthic</Link>
-              </li>
-            </ul>
-          </div>
+          <p>Click or tap in image for a detailed view.</p>
           {wildType && (
             <div className="type-section" id="wild-type">
               <h2>

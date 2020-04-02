@@ -11,6 +11,10 @@ nav {
   height: 5rem;
   transition: all ease-out 0.6s;
 
+  &.is-active {
+    display: none;
+  }
+
   .brand {
     a {
       text-decoration: none;
@@ -143,7 +147,8 @@ nav {
 @include phone {
   nav {
     .brand {
-      width: 70%;
+      width: 50%;
+      font-size: 0.8rem;
     }
     .links {
       visibility: hidden;

@@ -34,6 +34,7 @@ const Navbar = class extends React.Component {
     return (
       <>
         <nav
+          className={`${this.state.navBarActiveClass}`}
           id="nav"
           style={{
             backgroundColor: navbarBackground

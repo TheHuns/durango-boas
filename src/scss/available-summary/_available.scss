@@ -17,6 +17,12 @@
     white-space: nowrap;
     background: #f4f4f4;
     -ms-overflow-style: none;
+    position: fixed;
+    z-index: 3;
+    top: 5rem;
+    left: 0;
+    right: 0;
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -206,22 +212,91 @@
 }
 
 @include phone {
-  .available-summary {
-    padding: 1.5rem;
-    grid-template-columns: 1fr;
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .layout-container {
+    padding-top: 5rem;
 
-    .horizontal-scroll {
+    .available-summary {
+      padding: 5.5rem 1rem 0 1rem;
+
       display: block;
-    }
-    .side-nav {
-      display: none;
-    }
-    h1 {
-      font-size: 1.4rem;
-    }
-    .post-container {
-      grid-template-columns: 1fr;
-      margin: auto;
+      width: 100%;
+      .main-column {
+        width: 100%;
+        h1 {
+          margin-bottom: 1rem;
+        }
+        #wild-type {
+          margin-top: 1rem;
+        }
+        #xanthic {
+          margin-bottom: 0;
+        }
+      }
+
+      .horizontal-scroll {
+        display: block;
+      }
+      .side-nav {
+        display: none;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .type-section {
+        width: 100%;
+        padding: 1rem;
+        .link-to-collection {
+          display: block;
+          padding: 1rem 0 0 0;
+        }
+
+        .post-container {
+          .post {
+            display: flex;
+
+            .sold-tag {
+              top: auto;
+              bottom: 0.5rem;
+            }
+
+            .feature-image {
+              height: 120px;
+              width: 30%;
+            }
+            .info {
+              width: 70%;
+              padding: 0.5rem;
+
+              h2 {
+                font-size: 0.8rem;
+                margin-bottom: 0.2rem;
+              }
+              p,
+              .about {
+                margin: 0.2rem 0;
+                font-size: 0.8rem;
+                max-height: 24px;
+              }
+
+              .label {
+                font-size: 0.6rem;
+              }
+              .gender {
+                top: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      .post-container {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }
