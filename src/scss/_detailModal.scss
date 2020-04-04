@@ -15,14 +15,16 @@
     background-color: #f4f4f4;
     border-radius: 4px;
     box-shadow: 5px 5px 8px rgba(163, 163, 163, 0.815);
-    display: grid;
-    grid-template-rows: 10% 1fr 200px;
+    display: flex;
+    flex-direction: column;
+    // grid-template-rows: 10% 1fr 200px;
 
     .header {
       display: flex;
       padding: 10px;
       justify-content: space-between;
       align-items: center;
+      height: 10%;
       h2 {
         padding-right: 1rem;
       }
@@ -45,6 +47,7 @@
     }
 
     .photo {
+      height: calc(90% - 200px);
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat;
@@ -71,7 +74,7 @@
 @include phone {
   .modal-overlay {
     .detail-modal {
-      top: 25%;
+      top: 15%;
       left: 5%;
       right: 5%;
       bottom: 5%;
