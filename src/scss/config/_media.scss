@@ -1,4 +1,10 @@
 // MEDIA MIXINS --------------------------------------
+@mixin x-small {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin phone {
   @media screen and (max-width: 600px) {
     @content;

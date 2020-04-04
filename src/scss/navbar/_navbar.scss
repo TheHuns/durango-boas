@@ -153,6 +153,9 @@ nav {
     .brand {
       width: 40%;
       font-size: 0.8rem;
+      a {
+        margin-left: 0;
+      }
     }
     .current-page {
       visibility: visible;
@@ -162,9 +165,12 @@ nav {
         font-size: 0.7rem;
         padding-bottom: 0.2rem;
         margin-bottom: 0.2rem;
-        border-bottom: solid 1px #ddd;
+        border-bottom: solid 1px #aaa;
+        font-weight: 300;
       }
       p {
+        font-size: 1rem;
+        font-weight: 700;
       }
     }
     .links {
@@ -179,10 +185,21 @@ nav {
 
 @include tablet {
   nav {
+    .brand {
+      font-size: 1rem;
+      width: 30%;
+    }
     .links {
       li {
         padding: 0 1rem;
       }
     }
+  }
+}
+
+@include x-small {
+  .brand {
+    width: 35%;
+    font-size: 0.8rem;
   }
 }

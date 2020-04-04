@@ -96,7 +96,7 @@
     margin: 3rem 0;
     border-radius: 4px;
 
-    h2 {
+    .title {
       margin-bottom: 0.5rem;
       color: $primary-green;
 
@@ -228,7 +228,7 @@
     padding-top: 1rem;
 
     .available-summary {
-      padding: 5.5rem 1rem 0 1rem;
+      padding: 1rem 1rem 0 1rem;
 
       display: block;
       width: 100%;
@@ -329,6 +329,22 @@
 
       .post-container {
         grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+@include x-small {
+  .layout-container {
+    .available-summary {
+      h1 {
+        padding-left: 1rem;
+      }
+      padding: 0;
+      .type-section {
+        .link-to-collection {
+          padding: 2px 4px;
+        }
       }
     }
   }
