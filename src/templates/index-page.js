@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { navigate } from "@reach/router";
 
 import Layout from "../components/Layout";
-import DownArrow from "../img/DownArrow.png";
 import { useEffect } from "react";
 
 export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
+  const clickHandler = () => {
+    navigate("#testimonials");
+  };
+
   return (
     <div>
       <div className="index-page">
@@ -26,13 +30,12 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           <h1>{title}</h1>
           <h3>{heading}</h3>
         </div>
-        <div className="down-arrow">
-          <p>Scroll down to see more!</p>
-          <img src={DownArrow} alt="" />
+        <div className="show-more-button" onClick={() => clickHandler()}>
+          See more about us!
         </div>
       </div>
       <div className="content">
-        <section className="testimonials">
+        <section className="testimonials" id="testimonials">
           <h3>Testimonials</h3>
         </section>
         <section className="testimonials">

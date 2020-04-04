@@ -40,28 +40,22 @@
       margin-bottom: 1.3rem;
     }
   }
-  .down-arrow {
+  .show-more-button {
     z-index: 2;
     position: absolute;
     bottom: 4rem;
     left: 50%;
     text-align: center;
     transform: translateX(-50%);
-
-    p {
-      padding-bottom: 0.5rem;
-      opacity: 0;
-      color: rgb(236, 235, 235);
-      transition: all ease-in 0.6s;
-    }
+    background: $accent;
+    color: #ddd;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
     &:hover {
-      p {
-        opacity: 1;
-      }
-    }
-
-    img {
-      height: 22px;
+      background: #ddd;
+      color: $accent;
     }
   }
 }

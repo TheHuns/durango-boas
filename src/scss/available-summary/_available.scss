@@ -19,9 +19,11 @@
     -ms-overflow-style: none;
     position: fixed;
     z-index: 3;
-    top: 5rem;
+    bottom: 0;
     left: 0;
     right: 0;
+    -webkit-box-shadow: 0px -8px 13px 4px rgba(82, 82, 82, 0.59);
+    box-shadow: 0px -8px 13px 4px rgba(83, 82, 82, 0.59);
 
     &::-webkit-scrollbar {
       display: none;
@@ -217,7 +219,7 @@
     overflow-x: hidden;
   }
   .layout-container {
-    padding-top: 5rem;
+    padding-top: 1rem;
 
     .available-summary {
       padding: 5.5rem 1rem 0 1rem;

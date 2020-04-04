@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
-import AvailablePostTemplate from "./available-post";
 import { SidebarNav } from "../components/SidebarNav";
 import { Link } from "gatsby";
 import { navigate } from "@reach/router";
 import DetailModal from "../components/DetailModal";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { TypeSection } from "../components/TypeSection";
 
 export default () => {
   // State for Modal
@@ -23,7 +23,7 @@ export default () => {
 
   // Setup for motion draggable div phone menu
   const constraintsRef = useRef(null);
-  const x = useMotionValue(0);
+  const x = useMotionValue(1);
   const rotateY = useTransform(x, [-200, 0, 200], [-45, 0, 45], {
     clamp: false
   });
@@ -41,7 +41,7 @@ export default () => {
               description
               featuredimage {
                 childImageSharp {
-                  fluid(maxWidth: 240, quality: 64) {
+                  fluid(maxWidth: 640, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -121,9 +121,9 @@ export default () => {
         <motion.div
           className="horizontal-scroll"
           ref={constraintsRef}
-          style={{
-            rotateY
-          }}
+          // style={{
+          //   rotateY
+          // }}
         >
           <p>Jump To...</p>
           <motion.ul
@@ -134,22 +134,22 @@ export default () => {
             }}
           >
             <li>
-              <Link href="#wild-type">Wild Type</Link>
+              <a href="#wild-type">Wild Type</a>
             </li>
             <li>
-              <Link href="#hypo">Hypo</Link>
+              <a href="#hypo">Hypo</a>
             </li>
             <li>
-              <Link href="#t+">T +</Link>
+              <a href="#t+">T +</a>
             </li>
             <li>
-              <Link href="#t-">T -</Link>
+              <a href="#t-">T -</a>
             </li>
             <li>
-              <Link href="#pied">Pied</Link>
+              <a href="#pied">Pied</a>
             </li>
             <li>
-              <Link href="#xanthic">Xanthic</Link>
+              <a href="#xanthic">Xanthic</a>
             </li>
           </motion.ul>
         </motion.div>
@@ -157,213 +157,67 @@ export default () => {
           <h1>Available Animals</h1>
           <p>Click or tap in image for a detailed view.</p>
           {wildType && (
-            <div className="type-section" id="wild-type">
-              <h2>
-                Wild Type{" "}
-                <span
-                  className="link-to-collection"
-                  onClick={() => clickHandler("wild-type")}
-                >
-                  See Our Wild Type Collection
-                </span>{" "}
-              </h2>
-
-              <div className="post-container">
-                {wildType.map(post => (
-                  <AvailablePostTemplate
-                    name={post.node.frontmatter.name}
-                    content={post.node.frontmatter.description}
-                    dob={post.node.frontmatter.dob}
-                    image={post.node.frontmatter.featuredimage}
-                    mothername={post.node.frontmatter.mothername}
-                    fathername={post.node.frontmatter.fathername}
-                    sex={post.node.frontmatter.sex}
-                    price={post.node.frontmatter.price}
-                    sold={post.node.frontmatter.sold}
-                    setModal={setDetailsAndOpen}
-                  />
-                ))}
-              </div>
-            </div>
+            <TypeSection
+              title="Wild Type"
+              linkDescription="Go to our Wild Type Collection"
+              typeArray={wildType}
+              clickHandler={clickHandler}
+              setDetailsAndOpen={setDetailsAndOpen}
+              id="wild-type"
+            />
           )}
           {hypo && (
-            <div className="type-section" id="hypo">
-              <h2>
-                Hypo
-                <span
-                  className="link-to-collection"
-                  onClick={() => clickHandler("hypo")}
-                >
-                  See Our Hypo Collection
-                </span>
-              </h2>
-
-              <div className="post-container">
-                {hypo.map(post => (
-                  <AvailablePostTemplate
-                    name={post.node.frontmatter.name}
-                    content={post.node.frontmatter.description}
-                    dob={post.node.frontmatter.dob}
-                    image={post.node.frontmatter.featuredimage}
-                    mothername={post.node.frontmatter.mothername}
-                    fathername={post.node.frontmatter.fathername}
-                    sex={post.node.frontmatter.sex}
-                    price={post.node.frontmatter.price}
-                    sold={post.node.frontmatter.sold}
-                    setModal={setDetailsAndOpen}
-                  />
-                ))}
-              </div>
-            </div>
+            <TypeSection
+              title="Hypo"
+              linkDescription="Go to our Hypo Collection"
+              typeArray={hypo}
+              clickHandler={clickHandler}
+              setDetailsAndOpen={setDetailsAndOpen}
+              id="hypo"
+            />
           )}
           {tplus && (
-            <div className="type-section" id="t+" name="t+">
-              <h2>
-                T +
-                <span
-                  className="link-to-collection"
-                  onClick={() => clickHandler("t+")}
-                >
-                  See Our T + Collection
-                </span>
-              </h2>
-
-              <div className="post-container">
-                {tplus.map(post => (
-                  <AvailablePostTemplate
-                    name={post.node.frontmatter.name}
-                    content={post.node.frontmatter.description}
-                    dob={post.node.frontmatter.dob}
-                    image={post.node.frontmatter.featuredimage}
-                    mothername={post.node.frontmatter.mothername}
-                    fathername={post.node.frontmatter.fathername}
-                    sex={post.node.frontmatter.sex}
-                    price={post.node.frontmatter.price}
-                    sold={post.node.frontmatter.sold}
-                    setModal={setDetailsAndOpen}
-                  />
-                ))}
-              </div>
-            </div>
+            <TypeSection
+              title="T +"
+              linkDescription="Go to our T +  Collection"
+              typeArray={tplus}
+              clickHandler={clickHandler}
+              setDetailsAndOpen={setDetailsAndOpen}
+              id="t+"
+            />
           )}
           {tminus && (
-            <div className="type-section" id="t-">
-              <h2>
-                T -
-                <span
-                  className="link-to-collection"
-                  onClick={() => clickHandler("t-")}
-                >
-                  See Our T - Collection
-                </span>
-              </h2>
-
-              <div className="post-container">
-                {tminus.map(post => (
-                  <AvailablePostTemplate
-                    name={post.node.frontmatter.name}
-                    content={post.node.frontmatter.description}
-                    dob={post.node.frontmatter.dob}
-                    image={post.node.frontmatter.featuredimage}
-                    mothername={post.node.frontmatter.mothername}
-                    fathername={post.node.frontmatter.fathername}
-                    sex={post.node.frontmatter.sex}
-                    price={post.node.frontmatter.price}
-                    sold={post.node.frontmatter.sold}
-                    setModal={setDetailsAndOpen}
-                  />
-                ))}
-              </div>
-            </div>
+            <TypeSection
+              title="T -"
+              linkDescription="Go to our T - Collection"
+              typeArray={tminus}
+              clickHandler={clickHandler}
+              setDetailsAndOpen={setDetailsAndOpen}
+              id="t-"
+            />
           )}
           {pied && (
-            <div className="type-section" id="pied">
-              <h2>
-                Pied
-                <span
-                  className="link-to-collection"
-                  onClick={() => clickHandler("pied")}
-                >
-                  See Our Pied Collection
-                </span>
-              </h2>
-
-              <div className="post-container">
-                {pied.map(post => (
-                  <AvailablePostTemplate
-                    name={post.node.frontmatter.name}
-                    content={post.node.frontmatter.description}
-                    dob={post.node.frontmatter.dob}
-                    image={post.node.frontmatter.featuredimage}
-                    mothername={post.node.frontmatter.mothername}
-                    fathername={post.node.frontmatter.fathername}
-                    sex={post.node.frontmatter.sex}
-                    price={post.node.frontmatter.price}
-                    sold={post.node.frontmatter.sold}
-                    setModal={setDetailsAndOpen}
-                  />
-                ))}
-              </div>
-            </div>
+            <TypeSection
+              title="Pied"
+              linkDescription="Go to our Pied Collection"
+              typeArray={pied}
+              clickHandler={clickHandler}
+              setDetailsAndOpen={setDetailsAndOpen}
+              id="pied"
+            />
           )}
           {xanthic && (
-            <div className="type-section" id="xanthic">
-              <h2>
-                Xanthic
-                <span
-                  className="link-to-collection"
-                  onClick={() => clickHandler("xanthic")}
-                >
-                  See Our Xanthic Collection
-                </span>
-              </h2>
-
-              <div className="post-container">
-                {xanthic.map(post => (
-                  <AvailablePostTemplate
-                    name={post.node.frontmatter.name}
-                    content={post.node.frontmatter.description}
-                    dob={post.node.frontmatter.dob}
-                    image={post.node.frontmatter.featuredimage}
-                    mothername={post.node.frontmatter.mothername}
-                    fathername={post.node.frontmatter.fathername}
-                    sex={post.node.frontmatter.sex}
-                    price={post.node.frontmatter.price}
-                    sold={post.node.frontmatter.sold}
-                    setModal={setDetailsAndOpen}
-                  />
-                ))}
-              </div>
-            </div>
+            <TypeSection
+              title="Xanthic"
+              linkDescription="Go to our Xanthic Collection"
+              typeArray={xanthic}
+              clickHandler={clickHandler}
+              setDetailsAndOpen={setDetailsAndOpen}
+              id="xanthic"
+            />
           )}
         </div>
       </div>
     </Layout>
   );
 };
-
-// export const pageQuery = graphql`
-//   query AvailablePostsPage {
-//     allMarkdownRemark(
-//       filter: { frontmatter: { templateKey: { eq: "available-post" } } }
-//     ) {
-//       edges {
-//         node {
-//           html
-//           frontmatter {
-//             name
-//             description
-//             featuredimage {
-//               childImageSharp {
-//                 fluid(maxWidth: 240, quality: 64) {
-//                   ...GatsbyImageSharpFluid
-//                 }
-//               }
-//             }
-//             dob
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
