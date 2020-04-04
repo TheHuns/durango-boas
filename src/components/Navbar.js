@@ -1,35 +1,34 @@
 import React from "react";
 import { Link } from "gatsby";
-import Logo from "../img/boa-logo";
 
 const Navbar = class extends React.Component {
   state = {
     active: false,
-    navBarActiveClass: ""
+    navBarActiveClass: "",
   };
 
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active
+        active: !this.state.active,
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active"
+              navBarActiveClass: "is-active",
             })
           : this.setState({
-              navBarActiveClass: ""
+              navBarActiveClass: "",
             });
       }
     );
   };
 
   render() {
-    const { navbarBackground } = this.props;
+    const { navbarBackground, currentPage } = this.props;
 
     return (
       <>
@@ -39,7 +38,7 @@ const Navbar = class extends React.Component {
           style={{
             backgroundColor: navbarBackground
               ? `${navbarBackground}`
-              : "transparent"
+              : "transparent",
           }}
         >
           <div className="brand">
@@ -51,6 +50,12 @@ const Navbar = class extends React.Component {
               <h1>Sweet Tooth Constrictors</h1>
             </Link>
           </div>
+          {currentPage && (
+            <div className="current-page">
+              <h4>Current Page</h4>
+              <p>{currentPage}</p>
+            </div>
+          )}
           <ul className="links">
             <li>
               <Link to="/" activeClassName="active-link">

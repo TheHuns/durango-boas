@@ -37,9 +37,9 @@ export default () => {
     }
   `);
 
-  const getArray = name => {
+  const getArray = (name) => {
     return data.allMarkdownRemark.edges.filter(
-      item => item.node.frontmatter.genetics == name
+      (item) => item.node.frontmatter.genetics == name
     );
   };
 
@@ -51,7 +51,7 @@ export default () => {
       content,
       price,
       sex,
-      dob
+      dob,
     });
   };
 
@@ -60,7 +60,7 @@ export default () => {
   };
 
   return (
-    <Layout navbarBackground="#032108">
+    <Layout navbarBackground="#032108" currentPage=" Our Collection">
       {modalOpen ? showDetailModal() : null}
       <div className="collection-container">
         <SidebarNav currentPage="/collection-container" />

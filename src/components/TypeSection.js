@@ -7,22 +7,25 @@ export const TypeSection = ({
   typeArray,
   clickHandler,
   setDetailsAndOpen,
-  id
+  id,
 }) => {
   return (
     <div className="type-section" id={id}>
-      <h2>
+      <h2 className="title">
         {title}{" "}
-        <span
-          className="link-to-collection"
-          onClick={() => clickHandler("wild-type")}
-        >
-          {linkDescription}
-        </span>{" "}
+        <span>
+          <i> - Click or tap on image to see detailed view.</i>
+        </span>
       </h2>
+      <div
+        className="link-to-collection"
+        onClick={() => clickHandler("wild-type")}
+      >
+        <p>{linkDescription}</p>
+      </div>
 
       <div className="post-container">
-        {typeArray.map(post => (
+        {typeArray.map((post) => (
           <AvailablePostTemplate
             name={post.node.frontmatter.name}
             content={post.node.frontmatter.description}

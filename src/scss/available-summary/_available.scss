@@ -1,6 +1,6 @@
 // Available Summary Page ----------------------------------------
 .available-summary {
-  padding: 3rem;
+  padding: 2rem;
   background: $lighter-green;
   min-height: 90vh;
   display: grid;
@@ -97,20 +97,26 @@
     border-radius: 4px;
 
     h2 {
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
       color: $primary-green;
-      padding-right: 1.5rem;
 
-      .link-to-collection {
-        padding-left: 2rem;
+      span {
+        padding-left: 1rem;
+        font-size: 0.8rem;
+        color: #888;
+      }
+    }
+    .link-to-collection {
+      padding: 0.5rem 0 1rem 0;
+      cursor: pointer;
+      p {
+        text-decoration: underline;
         font-size: 0.9rem;
         color: $accent;
-        text-decoration: underline;
-        cursor: pointer;
+      }
 
-        &:hover {
-          color: #888;
-        }
+      &:hover {
+        color: #888;
       }
     }
   }
@@ -240,7 +246,7 @@
       }
 
       .horizontal-scroll {
-        display: block;
+        display: none;
       }
       .side-nav {
         display: none;
@@ -252,9 +258,34 @@
       .type-section {
         width: 100%;
         padding: 1rem;
+        position: relative;
+        .title {
+          font-size: 1.2rem;
+          span {
+            padding: 1rem 0 0.5rem 0;
+            display: block;
+            font-size: 0.6rem;
+          }
+        }
         .link-to-collection {
-          display: block;
-          padding: 1rem 0 0 0;
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: $accent;
+          padding: 0.5rem 0.8rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all ease-in-out 0.5s;
+          p {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.7rem;
+          }
+          &:hover {
+            background: #ddd;
+            color: $accent;
+          }
+          // padding: 0.5rem 0 1rem 0;
         }
 
         .post-container {

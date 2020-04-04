@@ -6,7 +6,7 @@ import "../scss/main.scss";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
-const TemplateWrapper = ({ children, navbarBackground }) => {
+const TemplateWrapper = ({ children, navbarBackground, currentPage }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -58,7 +58,7 @@ const TemplateWrapper = ({ children, navbarBackground }) => {
           content={`${withPrefix("/")}img/STCfavicon.png`}
         />
       </Helmet>
-      <Navbar navbarBackground={navbarBackground} />
+      <Navbar navbarBackground={navbarBackground} currentPage={currentPage} />
       <div className="layout-container">{children}</div>
       <Footer />
     </div>

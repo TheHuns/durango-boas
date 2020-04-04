@@ -25,7 +25,7 @@ export default () => {
   const constraintsRef = useRef(null);
   const x = useMotionValue(1);
   const rotateY = useTransform(x, [-200, 0, 200], [-45, 0, 45], {
-    clamp: false
+    clamp: false,
   });
 
   const data = useStaticQuery(graphql`
@@ -69,11 +69,11 @@ export default () => {
     setPied(getArray("pied"));
   }, []);
 
-  const getArray = name => {
+  const getArray = (name) => {
     let arr = null;
 
     let temp = data.allMarkdownRemark.edges.filter(
-      item => item.node.frontmatter.parentgenetics === name
+      (item) => item.node.frontmatter.parentgenetics === name
     );
 
     if (temp.length > 0) {
@@ -83,7 +83,7 @@ export default () => {
     return arr;
   };
 
-  const clickHandler = section => {
+  const clickHandler = (section) => {
     navigate(`/collection-container#${section}`);
   };
 
@@ -95,7 +95,7 @@ export default () => {
       content,
       price,
       sex,
-      dob
+      dob,
     });
   };
 
@@ -104,7 +104,7 @@ export default () => {
   };
 
   return (
-    <Layout navbarBackground="#032108">
+    <Layout navbarBackground="#032108" currentPage={"Available"}>
       {modalOpen ? showDetailModal() : null}
 
       <div className="available-summary">
@@ -130,7 +130,7 @@ export default () => {
             drag="x"
             dragConstraints={constraintsRef}
             style={{
-              x
+              x,
             }}
           >
             <li>
@@ -155,7 +155,7 @@ export default () => {
         </motion.div>
         <div className="main-column">
           <h1>Available Animals</h1>
-          <p>Click or tap in image for a detailed view.</p>
+
           {wildType && (
             <TypeSection
               title="Wild Type"

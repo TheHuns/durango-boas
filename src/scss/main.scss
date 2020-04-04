@@ -15,7 +15,7 @@ body {
   scroll-behavior: smooth;
 }
 .layout-container {
-  padding-top: 7rem;
+  padding-top: 6rem;
   background-color: $lighter-green;
   padding-bottom: 2rem;
 }
@@ -51,6 +51,9 @@ body {
 }
 
 @include phone {
+  .layout-container {
+    padding-top: 6rem;
+  }
   .about-page {
     padding: 1.5rem;
     margin: 1rem;
