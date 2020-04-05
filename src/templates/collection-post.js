@@ -10,7 +10,7 @@ const CollectionPostTemplate = ({
   contentComponent,
   image,
   setModal,
-  sex
+  sex,
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
   return (
@@ -22,7 +22,7 @@ const CollectionPostTemplate = ({
       <div
         className="feature-image"
         style={{
-          backgroundImage: `url(${image.childImageSharp.fluid.src})`
+          backgroundImage: `url(${image.childImageSharp.fluid.src})`,
         }}
       ></div>
       <div className="info">
@@ -33,9 +33,14 @@ const CollectionPostTemplate = ({
         <p>
           <span className="label">Date of Birth:</span> {date}
         </p>
-        <p>
+        <div className="about">
+          <div className="dots">
+            <a onClick={() => setModal(name, image, content, sex, dob)}>
+              read more..
+            </a>
+          </div>
           <span className="label">About:</span> {content}
-        </p>
+        </div>
       </div>
     </a>
   );
@@ -44,7 +49,7 @@ const CollectionPostTemplate = ({
 CollectionPostTemplate.propTypes = {
   name: PropTypes.string.isRequired,
   content: PropTypes.string,
-  contentComponent: PropTypes.func
+  contentComponent: PropTypes.func,
 };
 
 export default CollectionPostTemplate;

@@ -5,6 +5,7 @@ import CollectionPostTemplate from "./collection-post";
 import { Link } from "gatsby";
 import { SidebarNav } from "../components/SidebarNav";
 import DetailModal from "../components/DetailModal";
+import TypeSectionCollection from "../components/TypeSectionCollection";
 
 export default () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,7 +24,7 @@ export default () => {
               description
               featuredimage {
                 childImageSharp {
-                  fluid(maxWidth: 240, quality: 64) {
+                  fluid(maxWidth: 640, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -89,24 +90,20 @@ export default () => {
               </li>
             </ul>
           </div>
-          <div className="type-section" id="wild-type">
-            <h2>Wild Type</h2>
-
-            <div className="post-container">
-              {getArray("wild-type").map((post, index) => (
-                <CollectionPostTemplate
-                  name={post.node.frontmatter.name}
-                  content={post.node.frontmatter.description}
-                  dob={post.node.frontmatter.dob}
-                  image={post.node.frontmatter.featuredimage}
-                  setModal={setDetailsAndOpen}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="type-section" id="hypo">
-            <h2>Hypo</h2>
+          <TypeSectionCollection
+            title="Wild Type"
+            typeArray={getArray("wild-type")}
+            id="wild-type"
+            setDetailsAndOpen={setDetailsAndOpen}
+          />
+          <TypeSectionCollection
+            title="Hypo"
+            typeArray={getArray("hypo")}
+            id="hypo"
+            setDetailsAndOpen={setDetailsAndOpen}
+          />
+          {/* <div className="type-section" id="hypo">
+            <h2 className="title">Hypo</h2>
 
             <div className="post-container">
               {getArray("hypo").map((post, index) => (
@@ -120,9 +117,15 @@ export default () => {
                 />
               ))}
             </div>
-          </div>
-          <div className="type-section" id="t+" name="t+">
-            <h2>T +</h2>
+          </div> */}
+          <TypeSectionCollection
+            title="T +"
+            typeArray={getArray("t+")}
+            id="t+"
+            setDetailsAndOpen={setDetailsAndOpen}
+          />
+          {/* <div className="type-section" id="t+" name="t+">
+            <h2 className="title">T +</h2>
 
             <div className="post-container">
               {getArray("t+").map((post, index) => (
@@ -136,9 +139,15 @@ export default () => {
                 />
               ))}
             </div>
-          </div>
-          <div className="type-section" id="t-">
-            <h2>T -</h2>
+          </div> */}
+          <TypeSectionCollection
+            title="T -"
+            typeArray={getArray("t-")}
+            id="t-"
+            setDetailsAndOpen={setDetailsAndOpen}
+          />
+          {/* <div className="type-section" id="t-">
+            <h2 className="title">T -</h2>
 
             <div className="post-container">
               {getArray("t-").map((post, index) => (
@@ -152,9 +161,15 @@ export default () => {
                 />
               ))}
             </div>
-          </div>
-          <div className="type-section" id="pied">
-            <h2>Pied</h2>
+          </div> */}
+          <TypeSectionCollection
+            title="Pied"
+            typeArray={getArray("pied")}
+            id="pied"
+            setDetailsAndOpen={setDetailsAndOpen}
+          />
+          {/* <div className="type-section" id="pied">
+            <h2 className="title">Pied</h2>
 
             <div className="post-container">
               {getArray("pied").map((post, index) => (
@@ -168,9 +183,15 @@ export default () => {
                 />
               ))}
             </div>
-          </div>
-          <div className="type-section" id="xanthic">
-            <h2>Xanthic</h2>
+          </div> */}
+          <TypeSectionCollection
+            title="Xanthic"
+            typeArray={getArray("xanthic")}
+            id="xanthic"
+            setDetailsAndOpen={setDetailsAndOpen}
+          />
+          {/* <div className="type-section" id="xanthic">
+            <h2 className="title">Xanthic</h2>
 
             <div className="post-container">
               {getArray("xanthic").map((post, index) => (
@@ -184,35 +205,9 @@ export default () => {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>
   );
 };
-
-// export const pageQuery = graphql`
-//   query AvailablePostsPage {
-//     allMarkdownRemark(
-//       filter: { frontmatter: { templateKey: { eq: "available-post" } } }
-//     ) {
-//       edges {
-//         node {
-//           html
-//           frontmatter {
-//             name
-//             description
-//             featuredimage {
-//               childImageSharp {
-//                 fluid(maxWidth: 240, quality: 64) {
-//                   ...GatsbyImageSharpFluid
-//                 }
-//               }
-//             }
-//             dob
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
