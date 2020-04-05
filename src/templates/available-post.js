@@ -16,11 +16,11 @@ const AvailablePostTemplate = ({
   sex,
   price,
   setModal,
-  sold
+  sold,
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
 
-  const clickHandler = section => {
+  const clickHandler = (section) => {
     navigate(`/collection-container#${section}`);
   };
   return (
@@ -31,7 +31,7 @@ const AvailablePostTemplate = ({
         onClick={() => setModal(name, image, content, price, sex, dob)}
         className="feature-image"
         style={{
-          backgroundImage: `url(${image.childImageSharp.fluid.src})`
+          backgroundImage: `url(${image.childImageSharp.fluid.src})`,
         }}
       ></div>
       <div className="info">
@@ -49,7 +49,7 @@ const AvailablePostTemplate = ({
             style={{
               borderTop: "none",
               width: "fit-content",
-              paddingRight: "5px"
+              paddingRight: "5px",
             }}
           >
             M:{" "}
@@ -71,7 +71,11 @@ const AvailablePostTemplate = ({
           </span>
         </p>
         <div className="about">
-          <div className="dots">...</div>
+          <div className="dots">
+            <a onClick={() => setModal(name, image, content, sex, dob)}>
+              read more..
+            </a>
+          </div>
           <span className="label">About:</span> {content}
         </div>
         <p>
@@ -85,7 +89,7 @@ const AvailablePostTemplate = ({
 AvailablePostTemplate.propTypes = {
   name: PropTypes.string.isRequired,
   content: PropTypes.string,
-  contentComponent: PropTypes.func
+  contentComponent: PropTypes.func,
 };
 
 export default AvailablePostTemplate;

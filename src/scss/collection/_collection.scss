@@ -2,12 +2,13 @@
 
 // Available Summary Page ----------------------------------------
 .collection-container {
-  padding: 3rem;
+  padding: 2rem;
   background: $lighter-green;
   min-height: 90vh;
   display: grid;
-  gap: 2rem;
   grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  position: relative;
 
   .horizontal-scroll {
     display: none;
@@ -79,6 +80,8 @@
 
   h1 {
     margin-bottom: 2rem;
+    width: 100% !important;
+    display: block;
   }
 
   .post-container {
@@ -94,9 +97,14 @@
     margin: 3rem 0;
     border-radius: 4px;
 
-    h2 {
+    .title {
       margin-bottom: 2rem;
       color: $primary-green;
+      span {
+        padding-left: 1rem;
+        font-size: 0.8rem;
+        color: #888;
+      }
     }
   }
 
@@ -107,9 +115,9 @@
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
     border-radius: 5px;
     overflow: hidden;
-    cursor: pointer;
 
     .feature-image {
+      cursor: pointer;
       width: 100%;
       height: 200px;
       border-top-left-radius: 5px;
@@ -123,8 +131,16 @@
     }
 
     .info {
-      padding: 1.5rem;
+      padding: 1rem;
       margin-top: 0.3rem;
+      position: relative;
+
+      .gender {
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        height: 16px;
+      }
     }
 
     .label {
@@ -134,27 +150,186 @@
       color: $primary-green;
     }
 
+    .about {
+      max-height: 30px;
+      overflow: hidden;
+      position: relative;
+      border-top: solid 1px #eee;
+      padding-top: 0.5rem;
+      margin-top: 0.5rem;
+
+      .dots {
+        position: absolute;
+        right: 0;
+        // width: 20px;
+        // letter-spacing: 1px;
+        padding-left: 10px;
+        box-shadow: 0px 3px 3px #f4f4f4;
+        background-color: #fff;
+        opacity: 0.9;
+        z-index: 2;
+
+        a {
+          color: rgb(33, 33, 200);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+    i {
+      text-decoration: underline;
+    }
+
     h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
     }
     p {
+      font-size: 0.9rem;
       margin-top: 0.5rem;
-      border-top: solid 1px #ddd;
+      border-top: solid 1px #eee;
       padding-top: 0.5rem;
     }
   }
 }
 
 @include phone {
-  .available-summary {
-    padding: 1.5rem;
-    h1 {
-      font-size: 1.4rem;
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .layout-container {
+    padding-top: 1rem;
+
+    .collection-container {
+      padding: 1rem 1rem 0 1rem;
+
+      display: block;
+      width: 100%;
+      .main-column {
+        width: 100%;
+        h1 {
+          margin-bottom: 1rem;
+        }
+        #wild-type {
+          margin-top: 1rem;
+        }
+        #xanthic {
+          margin-bottom: 0;
+        }
+      }
+
+      .horizontal-scroll {
+        display: none;
+      }
+      .side-nav {
+        display: none;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .type-section {
+        width: 100%;
+        padding: 1rem;
+        position: relative;
+        .title {
+          font-size: 1.2rem;
+          span {
+            padding: 1rem 0 0.5rem 0;
+            display: block;
+            font-size: 0.6rem;
+          }
+        }
+        .link-to-collection {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: $accent;
+          padding: 0.5rem 0.8rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all ease-in-out 0.5s;
+          p {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.7rem;
+          }
+          &:hover {
+            background: #ddd;
+            color: $accent;
+          }
+          // padding: 0.5rem 0 1rem 0;
+        }
+
+        .collection-post {
+          display: flex;
+
+          .sold-tag {
+            top: auto;
+            bottom: 0.5rem;
+          }
+
+          .feature-image {
+            height: 120px;
+            width: 30%;
+          }
+          .info {
+            width: 70%;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            h2 {
+              font-size: 0.8rem;
+              margin-bottom: 0.2rem;
+            }
+            p,
+            .about {
+              margin: 0.2rem 0;
+              font-size: 0.8rem;
+              max-height: 26px;
+
+              a {
+                background: $accent;
+                color: #f4f4f4;
+                padding: 2px 4px;
+                text-decoration: none;
+                border-radius: 5px;
+                opacity: 1;
+              }
+            }
+
+            .label {
+              font-size: 0.6rem;
+            }
+            .gender {
+              top: 0.5rem;
+            }
+          }
+        }
+      }
+
+      .post-container {
+        grid-template-columns: 1fr;
+      }
     }
-    .post-container {
-      grid-template-columns: 1fr;
-      margin: auto;
+  }
+}
+
+@include x-small {
+  .layout-container {
+    .collection-container {
+      h1 {
+        padding-left: 1rem;
+      }
+      padding: 0;
+      .type-section {
+        .link-to-collection {
+          padding: 2px 4px;
+        }
+      }
     }
   }
 }

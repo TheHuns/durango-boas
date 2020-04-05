@@ -17,12 +17,11 @@ export const TypeSection = ({
           <i> - Click or tap on image to see detailed view.</i>
         </span>
       </h2>
-      <div
-        className="link-to-collection"
-        onClick={() => clickHandler("wild-type")}
-      >
-        <p>{linkDescription}</p>
-      </div>
+      {linkDescription && (
+        <div className="link-to-collection" onClick={() => clickHandler(id)}>
+          <p>{linkDescription}</p>
+        </div>
+      )}
 
       <div className="post-container">
         {typeArray.map((post) => (
