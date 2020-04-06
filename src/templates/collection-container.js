@@ -102,110 +102,34 @@ export default () => {
             id="hypo"
             setDetailsAndOpen={setDetailsAndOpen}
           />
-          {/* <div className="type-section" id="hypo">
-            <h2 className="title">Hypo</h2>
 
-            <div className="post-container">
-              {getArray("hypo").map((post, index) => (
-                <CollectionPostTemplate
-                  name={post.node.frontmatter.name}
-                  content={post.node.frontmatter.description}
-                  dob={post.node.frontmatter.dob}
-                  image={post.node.frontmatter.featuredimage}
-                  setModal={setDetailsAndOpen}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div> */}
           <TypeSectionCollection
             title="T +"
             typeArray={getArray("t+")}
             id="t+"
             setDetailsAndOpen={setDetailsAndOpen}
           />
-          {/* <div className="type-section" id="t+" name="t+">
-            <h2 className="title">T +</h2>
 
-            <div className="post-container">
-              {getArray("t+").map((post, index) => (
-                <CollectionPostTemplate
-                  name={post.node.frontmatter.name}
-                  content={post.node.frontmatter.description}
-                  dob={post.node.frontmatter.dob}
-                  image={post.node.frontmatter.featuredimage}
-                  setModal={setDetailsAndOpen}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div> */}
           <TypeSectionCollection
             title="T -"
             typeArray={getArray("t-")}
             id="t-"
             setDetailsAndOpen={setDetailsAndOpen}
           />
-          {/* <div className="type-section" id="t-">
-            <h2 className="title">T -</h2>
 
-            <div className="post-container">
-              {getArray("t-").map((post, index) => (
-                <CollectionPostTemplate
-                  name={post.node.frontmatter.name}
-                  content={post.node.frontmatter.description}
-                  dob={post.node.frontmatter.dob}
-                  image={post.node.frontmatter.featuredimage}
-                  setModal={setDetailsAndOpen}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div> */}
           <TypeSectionCollection
             title="Pied"
             typeArray={getArray("pied")}
             id="pied"
             setDetailsAndOpen={setDetailsAndOpen}
           />
-          {/* <div className="type-section" id="pied">
-            <h2 className="title">Pied</h2>
 
-            <div className="post-container">
-              {getArray("pied").map((post, index) => (
-                <CollectionPostTemplate
-                  name={post.node.frontmatter.name}
-                  content={post.node.frontmatter.description}
-                  dob={post.node.frontmatter.dob}
-                  image={post.node.frontmatter.featuredimage}
-                  setModal={setDetailsAndOpen}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div> */}
           <TypeSectionCollection
             title="Xanthic"
             typeArray={getArray("xanthic")}
             id="xanthic"
             setDetailsAndOpen={setDetailsAndOpen}
           />
-          {/* <div className="type-section" id="xanthic">
-            <h2 className="title">Xanthic</h2>
-
-            <div className="post-container">
-              {getArray("xanthic").map((post, index) => (
-                <CollectionPostTemplate
-                  name={post.node.frontmatter.name}
-                  content={post.node.frontmatter.description}
-                  dob={post.node.frontmatter.dob}
-                  image={post.node.frontmatter.featuredimage}
-                  setModal={setDetailsAndOpen}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div> */}
         </div>
       </div>
     </Layout>
