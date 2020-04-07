@@ -1,8 +1,9 @@
 // Index Page ----------------------------------------------------
 .index-page {
   padding: 3rem;
-  height: 90vh;
+  height: calc(100vh - 5rem);
   width: 100%;
+  background: #fff;
 
   .overlay {
     position: absolute;
@@ -13,49 +14,62 @@
     background-color: $primary-green;
     opacity: 0.85;
     z-index: 1;
+    visibility: hidden;
   }
   .showcase-image {
     position: absolute;
-    top: 0%;
-    right: 0;
-    width: 100%;
-    height: 100vh;
+    top: 20%;
+    right: 5%;
+    left: 55%;
+    bottom: 25%;
+    // width: 100%;
+    // height: 100vh;
     background-size: cover;
+    border-radius: 5px;
   }
   .caption {
     position: absolute;
     bottom: 3%;
-    right: 10%;
+    right: 3%;
     color: rgb(236, 235, 235);
     z-index: 3;
   }
   .slogan {
     position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 40%;
+    top: 15%;
+    left: 5%;
+    width: 45%;
     z-index: 1;
-    color: rgba(221, 221, 221, 0.85);
-    h1 {
-      margin-bottom: 1.3rem;
-    }
-  }
-  .show-more-button {
-    z-index: 2;
-    position: absolute;
-    bottom: 4rem;
-    left: 50%;
+    color: $primary-green;
     text-align: center;
-    transform: translateX(-50%);
-    background: $accent;
-    color: #ddd;
-    padding: 1rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    &:hover {
-      background: #ddd;
-      color: $accent;
+
+    img {
+      width: 60%;
+    }
+
+    h1,
+    h3 {
+      margin-bottom: 2rem;
+    }
+    .show-more-button {
+      z-index: 2;
+      margin: 0 auto;
+      // position: absolute;
+      // bottom: 4rem;
+      // left: 50%;
+      text-align: center;
+      // transform: translateX(-50%);
+      background: $accent;
+      width: fit-content;
+      color: #ddd;
+      padding: 1rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all ease-in-out 0.5s;
+      &:hover {
+        background: #ddd;
+        color: $accent;
+      }
     }
   }
 }
@@ -63,8 +77,33 @@
 @include phone {
   .index-page {
     padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+
+    .showcase-image {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+    }
     .slogan {
-      width: 80%;
+      position: relative;
+      width: 100%;
+      padding: 1rem;
+      top: auto;
+      left: auto;
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      h3 {
+        font-size: 0.9rem;
+      }
     }
   }
 }

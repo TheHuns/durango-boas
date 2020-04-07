@@ -1,7 +1,7 @@
 // Available Summary Page ----------------------------------------
 .available-summary {
-  padding: 2rem;
-  background: $lighter-green;
+  // padding: 2rem;
+  background: #f4f4f4;
   min-height: 90vh;
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -48,13 +48,13 @@
 
   .side-nav {
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 7rem;
-    margin-top: calc(39px + 3rem);
-    background: #f4f4f4;
+    // margin-top: calc(39px + 3rem);
+    background: $lighter-green;
     padding: 2rem;
     border-radius: 4px;
-    height: fit-content;
+    height: 100%;
 
     h3 {
       color: #888;
@@ -70,7 +70,7 @@
           color: #333;
           font-weight: 600;
           &:hover {
-            color: $light-green;
+            color: $accent;
           }
         }
       }
@@ -88,6 +88,8 @@
     margin-bottom: 2rem;
     width: 100% !important;
     display: block;
+    color: $primary-green;
+    margin-top: 1rem;
   }
 
   .type-section {
@@ -200,7 +202,7 @@
         z-index: 2;
 
         a {
-          color: rgb(33, 33, 200);
+          color: $accent;
           text-decoration: underline;
           cursor: pointer;
         }

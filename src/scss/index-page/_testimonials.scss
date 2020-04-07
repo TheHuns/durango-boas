@@ -5,11 +5,13 @@
 }
 .testimonials {
   height: 300px;
-  border: solid 1px black;
-  background: $lighter-green;
+  // border: solid 1px black;
+  background: $primary-green;
   text-align: center;
   padding-top: 5rem;
   margin: 2rem;
+  border-radius: 5px;
+  color: #f4f4f4;
 
   h2 {
     display: inline-block;

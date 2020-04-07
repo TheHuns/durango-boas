@@ -13,7 +13,7 @@ export const ContactPageTemplate = ({
   email,
   description,
   content,
-  contentComponent
+  contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
 
@@ -99,14 +99,14 @@ export const ContactPageTemplate = ({
 ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
-  contentComponent: PropTypes.func
+  contentComponent: PropTypes.func,
 };
 
 const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout navbarBackground="#032108">
+    <Layout navbarBackground="#670700">
       <ContactPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
@@ -120,7 +120,7 @@ const ContactPage = ({ data }) => {
 };
 
 ContactPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default ContactPage;

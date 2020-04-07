@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import { navigate } from "@reach/router";
 
 import Layout from "../components/Layout";
+import thumbnail from "../img/thumbnail.png";
 import { useEffect } from "react";
 
 export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
@@ -14,24 +15,28 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
   return (
     <div>
       <div className="index-page">
-        <div className="overlay"></div>
+        {/* <div className="overlay"></div> */}
         <div
           className="showcase-image"
           style={{
             backgroundImage: `url(${
               !!image.childImageSharp ? image.childImageSharp.fluid.src : image
             })`,
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
         >
-          <p className="caption">{subheading}</p>
+          <p className="caption"> - {subheading}</p>
+          <p style={{ position: "absolute", bottom: "-10%" }}>
+            The image here could be a single image or roll through a few images.
+          </p>
         </div>
         <div className="slogan">
+          <img src={thumbnail} alt="" />
           <h1>{title}</h1>
           <h3>{heading}</h3>
-        </div>
-        <div className="show-more-button" onClick={() => clickHandler()}>
-          See more about us!
+          <div className="show-more-button" onClick={() => clickHandler()}>
+            See more about us!
+          </div>
         </div>
       </div>
       <div className="content">
@@ -57,8 +62,8 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+    blurbs: PropTypes.array,
+  }),
 };
 
 const IndexPage = ({ data }) => {
@@ -68,9 +73,9 @@ const IndexPage = ({ data }) => {
 
   const [scrolled, setScrolled] = useState();
 
-  useEffect(_ => {
+  useEffect((_) => {
     setHeight(window.innerHeight);
-    const handleScroll = _ => {
+    const handleScroll = (_) => {
       if (window.pageYOffset > height + 100) {
         setScrolled(true);
       } else {
@@ -78,13 +83,13 @@ const IndexPage = ({ data }) => {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return _ => {
+    return (_) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <Layout navbarBackground={scrolled ? "#032108" : "transparent"}>
+    <Layout navbarBackground={"#670700"}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -101,9 +106,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;

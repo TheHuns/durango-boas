@@ -61,7 +61,7 @@ export default () => {
   };
 
   return (
-    <Layout navbarBackground="#032108" currentPage=" Our Collection">
+    <Layout navbarBackground="#670700" currentPage=" Our Collection">
       {modalOpen ? showDetailModal() : null}
       <div className="collection-container">
         <SidebarNav currentPage="/collection-container" />
