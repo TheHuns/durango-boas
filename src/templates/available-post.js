@@ -73,7 +73,7 @@ const AvailablePostTemplate = ({
         <div className="about">
           <div className="dots">
             <a onClick={() => setModal(name, image, content, price, sex, dob)}>
-              read more..
+              ...read more
             </a>
           </div>
           <span className="label">About:</span> {content}

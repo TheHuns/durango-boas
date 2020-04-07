@@ -3,7 +3,7 @@
 // Available Summary Page ----------------------------------------
 .collection-container {
   padding: 2rem;
-  background: $lighter-green;
+  background: $light-secondary;
   min-height: 90vh;
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -34,7 +34,7 @@
 
         a {
           text-decoration: none;
-          color: $primary-green;
+          color: $primary;
         }
       }
     }
@@ -64,7 +64,7 @@
           color: #333;
           font-weight: 600;
           &:hover {
-            color: $light-green;
+            color: $light-secondary;
           }
         }
       }
@@ -73,7 +73,7 @@
       text-decoration: none;
       color: #999;
       &:hover {
-        color: $primary-green;
+        color: $primary;
       }
     }
   }
@@ -99,7 +99,7 @@
 
     .title {
       margin-bottom: 2rem;
-      color: $primary-green;
+      color: $primary;
       span {
         padding-left: 1rem;
         font-size: 0.8rem;
@@ -112,7 +112,7 @@
     background: #fff;
     width: 100%;
     height: fit-content;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $light-secondary;
     border-radius: 5px;
     overflow: hidden;
 
@@ -147,7 +147,7 @@
       font-size: 0.8rem;
       font-weight: 700;
       padding-right: 0.5rem;
-      color: $primary-green;
+      color: $primary;
     }
 
     .about {

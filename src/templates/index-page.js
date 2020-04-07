@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { navigate } from "@reach/router";
-
+import { motion } from "framer-motion";
 import Layout from "../components/Layout";
-import thumbnail from "../img/thumbnail.png";
+import Logo from "../img/Logo_full.png";
 import { useEffect } from "react";
 
 export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
@@ -16,7 +16,10 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
     <div>
       <div className="index-page">
         {/* <div className="overlay"></div> */}
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
           className="showcase-image"
           style={{
             backgroundImage: `url(${
@@ -26,18 +29,29 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           }}
         >
           <p className="caption"> - {subheading}</p>
-          <p style={{ position: "absolute", bottom: "-10%" }}>
+          <p style={{ position: "absolute", top: "2%", right: "0" }}>
             The image here could be a single image or roll through a few images.
           </p>
-        </div>
-        <div className="slogan">
-          <img src={thumbnail} alt="" />
-          <h1>{title}</h1>
-          <h3>{heading}</h3>
+        </motion.div>
+        <motion.div
+          initial={{ x: "-200px", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="slogan"
+        >
+          <img src={Logo} alt="" />
+          <div className="text">
+            <h1>{title}</h1>
+            <p>
+              {heading} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dolorum quo officiis facilis fugit possimus eos aut obcaecati
+              atque sequi libero.
+            </p>
+          </div>
           <div className="show-more-button" onClick={() => clickHandler()}>
             See more about us!
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="content">
         <section className="testimonials" id="testimonials">

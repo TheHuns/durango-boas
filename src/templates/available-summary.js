@@ -106,7 +106,6 @@ export default () => {
   return (
     <Layout navbarBackground="#670700" currentPage={"Available"}>
       {modalOpen ? showDetailModal() : null}
-      <div className=""></div>
       <div className="available-summary">
         <SidebarNav
           currentPage="/available-summary"
@@ -118,7 +117,7 @@ export default () => {
           pied={pied}
         />
 
-        <motion.div
+        {/* <motion.div
           className="horizontal-scroll"
           ref={constraintsRef}
           // style={{
@@ -152,7 +151,7 @@ export default () => {
               <a href="#xanthic">Xanthic</a>
             </li>
           </motion.ul>
-        </motion.div>
+        </motion.div> */}
         <div className="main-column">
           <h1>Available Animals</h1>
 

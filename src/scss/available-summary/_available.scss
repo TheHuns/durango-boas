@@ -1,63 +1,64 @@
 // Available Summary Page ----------------------------------------
 .available-summary {
   // padding: 2rem;
-  background: #f4f4f4;
+  background: $light-gray;
   min-height: 90vh;
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 2rem;
   position: relative;
 
-  .horizontal-scroll {
-    display: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-    width: 100%;
-    overflow: auto;
-    white-space: nowrap;
-    background: #f4f4f4;
-    -ms-overflow-style: none;
-    position: fixed;
-    z-index: 3;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-box-shadow: 0px -8px 13px 4px rgba(82, 82, 82, 0.59);
-    box-shadow: 0px -8px 13px 4px rgba(83, 82, 82, 0.59);
+  // .horizontal-scroll {
+  //   display: none;
+  //   padding: 0.5rem;
+  //   border-radius: 4px;
+  //   width: 100%;
+  //   overflow: auto;
+  //   white-space: nowrap;
+  //   background: #f4f4f4;
+  //   -ms-overflow-style: none;
+  //   position: fixed;
+  //   z-index: 3;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   -webkit-box-shadow: 0px -8px 13px 4px rgba(82, 82, 82, 0.59);
+  //   box-shadow: 0px -8px 13px 4px rgba(83, 82, 82, 0.59);
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    p {
-      color: #888;
-    }
-    ul {
-      display: flex;
-      list-style: none;
+  //   &::-webkit-scrollbar {
+  //     display: none;
+  //   }
+  //   p {
+  //     color: #888;
+  //   }
+  //   ul {
+  //     display: flex;
+  //     list-style: none;
 
-      li {
-        padding: 1rem 1rem 0 1rem;
+  //     li {
+  //       padding: 1rem 1rem 0 1rem;
 
-        a {
-          text-decoration: none;
-          color: $primary-green;
-        }
-      }
-    }
-  }
+  //       a {
+  //         text-decoration: none;
+  //         color: $primary;
+  //       }
+  //     }
+  //   }
+  // }
 
   .side-nav {
-    position: -webkit-sticky;
-    position: fixed;
-    top: 7rem;
     // margin-top: calc(39px + 3rem);
-    background: $lighter-green;
-    padding: 2rem;
-    border-radius: 4px;
+    background: $dark-gray;
+    padding: 3rem;
+    // border-radius: 4px;
     height: 100%;
 
+    .inner-container {
+      position: sticky;
+      top: 6rem;
+    }
     h3 {
-      color: #888;
+      color: #f9f9f9;
       font-weight: 300;
       margin-bottom: 2rem;
     }
@@ -67,8 +68,8 @@
         margin-bottom: 1rem;
         a {
           text-decoration: none;
-          color: #333;
-          font-weight: 600;
+          color: #f4f4f4;
+          font-weight: 500;
           &:hover {
             color: $accent;
           }
@@ -77,9 +78,9 @@
     }
     #nav {
       text-decoration: none;
-      color: #999;
+      color: #ddd;
       &:hover {
-        color: $primary-green;
+        color: $accent;
       }
     }
   }
@@ -88,28 +89,29 @@
     margin-bottom: 2rem;
     width: 100% !important;
     display: block;
-    color: $primary-green;
-    margin-top: 1rem;
+    color: #f4f4f4;
+    margin-top: 3rem;
+    margin: 3rem 0 2rem 2rem;
   }
 
   .type-section {
-    background: #f4f4f4;
+    background: $light-gray;
     padding: 2rem;
     margin: 3rem 0;
     border-radius: 4px;
 
     .title {
       margin-bottom: 0.5rem;
-      color: $primary-green;
+      color: #f9f9f9;
 
       span {
         padding-left: 1rem;
         font-size: 0.8rem;
-        color: #888;
+        color: #e4e4e4;
       }
     }
     .link-to-collection {
-      padding: 0.5rem 0 1rem 0;
+      padding: 0.5rem 0 2rem 0;
       cursor: pointer;
       p {
         text-decoration: underline;
@@ -130,10 +132,10 @@
   }
 
   .post {
-    background: #f4f4f4;
+    background: $dark-gray;
     width: 100%;
     height: fit-content;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px #353535;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -142,12 +144,12 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      background: #eee;
+      background: #333;
       padding: 3px;
       z-index: 3;
       font-size: 0.8rem;
       font-weight: 700;
-      color: rgb(153, 29, 29);
+      color: $bright;
       border-radius: 4px;
     }
 
@@ -182,44 +184,48 @@
       font-size: 0.8rem;
       font-weight: 700;
       padding-right: 0.5rem;
-      color: $primary-green;
+      color: #ddd;
     }
     .about {
       max-height: 30px;
       overflow: hidden;
       position: relative;
-      border-top: solid 1px #eee;
+      border-top: solid 1px $light-gray;
       padding-top: 0.5rem;
       margin-top: 0.5rem;
+      color: #f4f4f4;
 
       .dots {
         position: absolute;
         right: 0;
         padding-left: 10px;
-        box-shadow: 0px 3px 3px #f4f4f4;
-        background-color: #f4f4f4;
-        opacity: 0.9;
+        box-shadow: 0px -5px 5px $dark-gray;
+        background-color: $dark-gray;
+        opacity: 1;
         z-index: 2;
 
         a {
-          color: $accent;
+          color: $secondary;
           text-decoration: underline;
           cursor: pointer;
         }
       }
     }
     i {
+      color: #f4f4f4;
       text-decoration: underline;
     }
 
     h2 {
+      color: #f4f4f4;
       font-size: 1rem;
       margin-bottom: 0.7rem;
     }
     p {
+      color: #f4f4f4;
       font-size: 0.9rem;
       margin-top: 0.5rem;
-      border-top: solid 1px #eee;
+      border-top: solid 1px $light-gray;
       padding-top: 0.5rem;
     }
   }
@@ -231,23 +237,27 @@
     overflow-x: hidden;
   }
   .layout-container {
-    padding-top: 1rem;
+    // padding-top: 1rem;
 
     .available-summary {
-      padding: 1rem 1rem 0 1rem;
+      padding: 1rem;
 
       display: block;
       width: 100%;
       .main-column {
         width: 100%;
         h1 {
-          margin-bottom: 1rem;
+          display: none;
+          padding: 0 0 1rem 1rem;
+          margin: 0;
         }
         #wild-type {
-          margin-top: 1rem;
+          margin-top: 0;
+          padding-top: 1rem;
         }
         #xanthic {
           margin-bottom: 0;
+          padding-bottom: 2rem;
         }
       }
 
@@ -278,7 +288,7 @@
           top: 1rem;
           right: 1rem;
           background: $accent;
-          padding: 0.5rem 0.8rem;
+          padding: 0.3rem 0.5rem;
           border-radius: 5px;
           cursor: pointer;
           transition: all ease-in-out 0.5s;
@@ -322,12 +332,12 @@
                 max-height: 26px;
 
                 a {
-                  background: $accent;
-                  color: #f4f4f4;
-                  padding: 2px 4px;
-                  text-decoration: none;
-                  border-radius: 5px;
-                  opacity: 1;
+                  //   background: $secondary;
+                  // color: #f4f4f4;
+                  //   padding: 2px 4px;
+                  //   text-decoration: none;
+                  //   border-radius: 5px;
+                  //   opacity: 1;
                 }
               }
 

@@ -11,13 +11,13 @@ body {
   width: 100%;
   height: fit-content;
   font-family: "Montserrat", sans-serif;
-  background: $light-green;
+  background: $secondary;
   scroll-behavior: smooth;
 }
 .layout-container {
   padding-top: 5rem !important;
-  background-color: $lighter-green;
-  padding-bottom: 2rem;
+  background-color: $light-secondary;
+  padding-bottom: 0;
 }
 
 @import "index-page/showcase";
@@ -35,7 +35,7 @@ body {
   margin: 3rem;
   background: #f4f4f4;
   min-height: 90vh;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $light-secondary;
   border-radius: 5px;
   margin-bottom: 0;
 
