@@ -1,4 +1,5 @@
 import React from "react";
+import UpArrow from "../img/up_arrow.png";
 
 export const SidebarNav = ({
   currentPage,
@@ -7,7 +8,7 @@ export const SidebarNav = ({
   hypo,
   tminus,
   tplus,
-  pied
+  pied,
 }) => {
   if (currentPage === "/available-summary") {
     return (
@@ -45,11 +46,11 @@ export const SidebarNav = ({
             </li>
           )}
         </ul>
-        <p>
-          <a href={currentPage} id="nav">
-            Back to top
-          </a>
-        </p>
+
+        <a href={currentPage} id="nav">
+          Back to top
+          <img src={UpArrow} alt="" />
+        </a>
       </div>
     );
   }
@@ -77,11 +78,10 @@ export const SidebarNav = ({
           <a href="#xanthic">Xanthic</a>
         </li>
       </ul>
-      <p>
-        <a href={currentPage} id="nav">
-          Back to top
-        </a>
-      </p>
+      <a href={currentPage} id="nav">
+        Back to top
+        <img src={UpArrow} alt="" />
+      </a>
     </div>
   );
 };
