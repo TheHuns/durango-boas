@@ -11,11 +11,11 @@ body {
   width: 100%;
   height: fit-content;
   font-family: "Montserrat", sans-serif;
-  background: $light-green;
+  background: $lighter-green;
   scroll-behavior: smooth;
 }
 .layout-container {
-  padding-top: 6rem;
+  margin-top: 5rem;
   background-color: $lighter-green;
   padding-bottom: 2rem;
 }
@@ -38,6 +38,7 @@ body {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $lighter-green;
   border-radius: 5px;
   margin-bottom: 0;
+  margin-top: 7rem;
 
   h2 {
     padding-bottom: 2rem;
@@ -51,9 +52,9 @@ body {
 }
 
 @include phone {
-  .layout-container {
-    padding-top: 6rem;
-  }
+  // .layout-container {
+  //   padding-top: 6rem;
+  // }
   .about-page {
     padding: 1.5rem;
     margin: 1rem;

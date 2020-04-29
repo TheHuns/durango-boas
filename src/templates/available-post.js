@@ -20,9 +20,12 @@ const AvailablePostTemplate = ({
 }) => {
   const date = dateformat(dob, "mmmm dS, yyyy");
 
-  const clickHandler = (section) => {
+  const clickHandler = async (section) => {
+    // let url = `http://localhost:8000/collection-container#${section}`;
+    // await window.open(url, "_blank");
     navigate(`/collection-container#${section}`);
   };
+
   return (
     <div className="post">
       {sold === "true" ? <div className="sold-tag">SOLD</div> : null}
@@ -64,7 +67,7 @@ const AvailablePostTemplate = ({
             F:{" "}
             <i
               style={{ cursor: "pointer" }}
-              onClick={() => clickHandler(fathername)}
+              onClick={() => clickHandler(mothername)}
             >
               {mothername}
             </i>

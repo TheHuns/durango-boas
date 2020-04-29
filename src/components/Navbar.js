@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Logo from "../img/logo_simple.png";
 
 const Navbar = class extends React.Component {
   state = {
@@ -43,11 +44,7 @@ const Navbar = class extends React.Component {
         >
           <div className="brand">
             <Link to="/">
-              {/* <img src={Logo} alt="" style={{ color: "#ddd" }} /> */}
-              {/* <svg style={{ height: "35px", width: "35px" }}>
-                <Logo />
-              </svg> */}
-              <h1>Sweet Tooth Constrictors</h1>
+              <img src={Logo} alt="Sweet Tooth Constrictors" />
             </Link>
           </div>
           {currentPage && (

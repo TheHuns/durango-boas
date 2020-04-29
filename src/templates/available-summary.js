@@ -104,7 +104,7 @@ export default () => {
   };
 
   return (
-    <Layout navbarBackground="#032108" currentPage={"Available"}>
+    <Layout navbarBackground="#2a2a2a" currentPage={"Available"}>
       {modalOpen ? showDetailModal() : null}
 
       <div className="available-summary">

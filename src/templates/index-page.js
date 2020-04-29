@@ -21,10 +21,10 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
             backgroundImage: `url(${
               !!image.childImageSharp ? image.childImageSharp.fluid.src : image
             })`,
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
         >
-          <p className="caption">{subheading}</p>
+          <p className="caption"> - {subheading}</p>
         </div>
         <div className="slogan">
           <h1>{title}</h1>
@@ -35,7 +35,8 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
         </div>
       </div>
       <div className="content">
-        <section className="testimonials" id="testimonials">
+        <div className="space-holder" id="testimonials"></div>
+        <section className="testimonials">
           <h3>Testimonials</h3>
         </section>
         <section className="testimonials">
@@ -57,8 +58,8 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+    blurbs: PropTypes.array,
+  }),
 };
 
 const IndexPage = ({ data }) => {
@@ -68,9 +69,9 @@ const IndexPage = ({ data }) => {
 
   const [scrolled, setScrolled] = useState();
 
-  useEffect(_ => {
+  useEffect((_) => {
     setHeight(window.innerHeight);
-    const handleScroll = _ => {
+    const handleScroll = (_) => {
       if (window.pageYOffset > height + 100) {
         setScrolled(true);
       } else {
@@ -78,13 +79,13 @@ const IndexPage = ({ data }) => {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return _ => {
+    return (_) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <Layout navbarBackground={scrolled ? "#032108" : "transparent"}>
+    <Layout navbarBackground={scrolled ? "#2a2a2a" : "transparent"}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -101,9 +102,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;
