@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { navigate } from "@reach/router";
+import LogoFull from "../img/STC_Logo.jpg";
 
 import Layout from "../components/Layout";
 import { useEffect } from "react";
@@ -27,6 +28,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           <p className="caption"> - {subheading}</p>
         </div>
         <div className="slogan">
+          <img className="logo-full" src={LogoFull} alt="" />
           <h1>{title}</h1>
           <h3>{heading}</h3>
         </div>
