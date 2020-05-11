@@ -3,7 +3,8 @@ import CollectionPostTemplate from "../templates/collection-post";
 
 const TypeSectionCollection = ({ title, typeArray, setDetailsAndOpen, id }) => {
   return (
-    <div className="type-section" id={id}>
+    <div className="type-section">
+      <div className="space-holder" id={id}></div>
       <h2 className="title">
         {title}{" "}
         <span>

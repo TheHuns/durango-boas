@@ -7,6 +7,8 @@
   grid-template-columns: 200px 1fr;
   gap: 2rem;
   position: relative;
+  max-width: 1300px;
+  margin: auto;
 
   // .horizontal-scroll {
   //   display: none;
@@ -47,16 +49,19 @@
   // }
 
   .side-nav {
-    // margin-top: calc(39px + 3rem);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 7rem;
+    margin-top: calc(39px + 36px + 8rem);
     background: $dark-gray;
-    padding: 3rem;
-    // border-radius: 4px;
-    height: 100%;
+    padding: 2rem;
+    border-radius: 4px;
+    height: fit-content;
 
-    .inner-container {
-      position: sticky;
-      top: 6rem;
-    }
+    // .inner-container {
+    //   position: sticky;
+    //   top: 6rem;
+    // }
     h3 {
       color: #f9f9f9;
       font-weight: 300;
@@ -91,7 +96,13 @@
     display: block;
     color: #f4f4f4;
     margin-top: 3rem;
-    margin: 3rem 0 2rem 2rem;
+    margin: 3rem 0 1rem 2rem;
+  }
+
+  .subheading {
+    margin-left: 2rem;
+    color: #f4f4f4;
+    font-size: 0.9rem;
   }
 
   .type-section {
@@ -135,7 +146,7 @@
     background: $dark-gray;
     width: 100%;
     height: fit-content;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px #353535;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 11px #555;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -144,7 +155,7 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      background: #333;
+      background: rgb(29, 29, 29);
       padding: 3px;
       z-index: 3;
       font-size: 0.8rem;

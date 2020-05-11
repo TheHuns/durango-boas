@@ -1,9 +1,9 @@
 // Navbar --------------------------------------------------------
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  // padding: 1rem 0;
+  padding: 0 3rem;
   z-index: 6;
   position: fixed;
   top: 0;
@@ -18,7 +18,6 @@ nav {
   .brand {
     a {
       text-decoration: none;
-      margin-left: 2rem;
       display: flex;
       align-items: center;
       transition: all 1s ease-out;
@@ -77,16 +76,17 @@ nav {
       a {
         text-decoration: none;
         color: #ddd;
+        font-weight: 600;
         padding-bottom: 3px;
         &:hover {
-          color: #fff;
-          filter: drop-shadow(0 0 18px $secondary);
+          color: $bright;
+          filter: drop-shadow(0 0 18px $bright);
         }
       }
       .active-link {
-        color: #fff;
-        filter: drop-shadow(5px 5px 22px #eee);
-        border-bottom: 1.5px solid #ddd;
+        color: $bright;
+        filter: drop-shadow(5px 5px 22px $primary);
+        border-bottom: 1.5px solid $bright;
       }
     }
   }

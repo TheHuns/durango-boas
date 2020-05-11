@@ -15,10 +15,11 @@ const CollectionPostTemplate = ({
   const date = dateformat(dob, "mmmm dS, yyyy");
   return (
     <a
-      id={name}
       className="collection-post"
       onClick={() => setModal(name, image, content, sex, dob)}
     >
+      <div className="space-holder" id={name}></div>
+
       <div
         className="feature-image"
         style={{

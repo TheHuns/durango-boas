@@ -22,17 +22,17 @@ export const SidebarNav = ({
             )}
             {hypo && (
               <li>
-                <a href="#hypo">Hypo</a>
+                <a href="#hypo">Hypomelanistic</a>
               </li>
             )}
             {tplus && (
               <li>
-                <a href="#t+">T +</a>
+                <a href="#t+">T + Albino</a>
               </li>
             )}
             {tminus && (
               <li>
-                <a href="#t-">T -</a>
+                <a href="#t-">T - Albino</a>
               </li>
             )}
             {pied && (
@@ -64,13 +64,13 @@ export const SidebarNav = ({
           <a href="#wild-type">Wild Type</a>
         </li>
         <li>
-          <a href="#hypo">Hypo</a>
+          <a href="#hypo">Hypomelanistic</a>
         </li>
         <li>
-          <a href="#t+">T +</a>
+          <a href="#t+">T + Albino</a>
         </li>
         <li>
-          <a href="#t-">T -</a>
+          <a href="#t-">T - Albino</a>
         </li>
         <li>
           <a href="#pied">Pied</a>

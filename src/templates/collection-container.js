@@ -67,29 +67,11 @@ export default () => {
         <SidebarNav currentPage="/collection-container" />
         <div>
           <h1>Collection</h1>
-          <div className="horizontal-scroll">
-            <p>Jump To...</p>
-            <ul>
-              <li>
-                <Link to="#wild-type">Wild Type</Link>
-              </li>
-              <li>
-                <Link to="#hypo">Hypo</Link>
-              </li>
-              <li>
-                <Link to="#t+">T +</Link>
-              </li>
-              <li>
-                <Link to="#t-">T -</Link>
-              </li>
-              <li>
-                <Link to="#pied">Pied</Link>
-              </li>
-              <li>
-                <Link to="#xanthic">Xanthic</Link>
-              </li>
-            </ul>
-          </div>
+          <p className="subheading">
+            We are proud to share our collection of Boas. Please feel free to
+            contact us with any questions!
+          </p>
+
           <TypeSectionCollection
             title="Wild Type"
             typeArray={getArray("wild-type")}

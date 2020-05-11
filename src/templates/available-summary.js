@@ -154,6 +154,10 @@ export default () => {
         </motion.div> */}
         <div className="main-column">
           <h1>Available Animals</h1>
+          <p className="subheading">
+            Check back often to see updates with new animals or reach us through
+            the contact page with any questions.
+          </p>
 
           {wildType && (
             <TypeSection

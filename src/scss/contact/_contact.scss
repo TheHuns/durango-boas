@@ -1,13 +1,13 @@
 @import "../config/variables";
 
 // Contact Page --------------------------------------------------
-.contact-page::after {
-  background: $secondary;
-}
+// .contact-page::after {
+//   background: $secondary;
+// }
 
 .contact-page {
   margin: 3rem;
-  background: #f4f4f4;
+  background: $dark-gray;
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -15,7 +15,8 @@
   max-width: 1200px;
   border-radius: 4px;
   grid-gap: 3rem;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 6px $light-secondary;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 11px #555;
+  color: #f4f4f4;
 
   .left-column {
     display: grid;
@@ -31,7 +32,7 @@
 
     .form-box {
       width: 100%;
-      background: #fff;
+      background: $light-gray;
       padding: 1.5rem;
       height: fit-content;
       border-radius: 5px;
@@ -85,7 +86,7 @@
   }
 
   .right-column {
-    background: #fff;
+    background: $light-gray;
     padding: 1.5rem;
     border-radius: 5px;
 
@@ -94,11 +95,11 @@
 
       h3,
       h5 {
-        color: rgb(67, 87, 48);
+        color: $accent;
         margin-bottom: 1rem;
       }
       p {
-        color: #333;
+        color: #f4f4f4;
       }
     }
     .social-media {
@@ -109,7 +110,7 @@
         display: flex;
         margin-bottom: 0.6rem;
         text-decoration: none;
-        color: $primary;
+        color: #f4f4f4;
         align-items: center;
         height: 28px;
 

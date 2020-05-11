@@ -15,7 +15,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
   return (
     <div>
       <div className="index-page">
-        {/* <div className="overlay"></div> */}
+        <div className="overlay"></div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -33,25 +33,37 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
             The image here could be a single image or roll through a few images.
           </p>
         </motion.div>
-        <motion.div
-          initial={{ x: "-200px", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="slogan"
-        >
-          <img src={Logo} alt="" />
-          <div className="text">
+        <div className="slogan">
+          <motion.img
+            initial={{ y: "-500px", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            src={Logo}
+            alt=""
+          />
+          <motion.div
+            initial={{ x: "-600px", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text"
+          >
             <h1>{title}</h1>
             <p>
               {heading} Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Dolorum quo officiis facilis fugit possimus eos aut obcaecati
               atque sequi libero.
             </p>
-          </div>
-          <div className="show-more-button" onClick={() => clickHandler()}>
+          </motion.div>
+          <motion.div
+            initial={{ y: "300px", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="show-more-button"
+            onClick={() => clickHandler()}
+          >
             See more about us!
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
       <div className="content">
         <section className="testimonials" id="testimonials">

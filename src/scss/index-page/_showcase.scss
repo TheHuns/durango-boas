@@ -11,16 +11,15 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    background-color: $primary;
-    opacity: 0.85;
+    background-color: #222;
+    opacity: 0.8;
     z-index: 1;
-    visibility: hidden;
   }
   .showcase-image {
     position: absolute;
-    top: 5rem;
-    right: 5rem;
-    left: 30%;
+    top: 0;
+    right: 0;
+    left: 0;
     bottom: 0;
     // width: 100%;
     // height: 100vh;
@@ -38,54 +37,49 @@
   }
   .slogan {
     position: absolute;
-    top: 25%;
-    left: 5%;
-    width: 45%;
-    z-index: 1;
+
+    top: calc(50% + 2rem);
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 80%;
+    z-index: 2;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
     display: flex;
     color: #ddd;
     text-align: center;
-    background: #f3f3f3;
-    height: 250px;
-    border-radius: 3px;
-    box-shadow: 20px 0 20px $dark-gray;
 
     img {
       // width: 30%;
-      height: 100%;
+      height: 40vh;
       padding-bottom: 1rem;
     }
 
     .text {
-      width: 60%;
+      width: 100%;
       padding: 1rem;
-      color: $dark-gray;
       h1 {
         font-size: 1.2rem;
         margin-bottom: 1rem;
       }
     }
-    .show-more-button {
-      z-index: 2;
-      margin: 0 auto;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      text-align: center;
-      transform: translate3d(-50%, 50%, 0);
-      background: $bright;
-      width: fit-content;
-      color: #ddd;
-      padding: 1rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all ease-in-out 0.5s;
-      &:hover {
-        background: #ddd;
-        color: $bright;
-      }
+  }
+  .show-more-button {
+    z-index: 2;
+    // position: absolute;
+    // bottom: 3%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    background: $primary;
+    color: #ddd;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+      background: #ddd;
+      color: $bright;
     }
   }
 }
@@ -93,32 +87,36 @@
 @include phone {
   .index-page {
     padding: 0;
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
+    // display: flex;
+    // flex-direction: column-reverse;
+    // height: auto;
 
-    .showcase-image {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      top: auto;
-      right: auto;
-      left: auto;
-      bottom: auto;
-    }
+    // .showcase-image {
+    //   position: relative;
+    //   width: 100%;
+    //   height: 400px;
+    //   top: auto;
+    //   right: auto;
+    //   left: auto;
+    //   bottom: auto;
+    // }
     .slogan {
-      position: relative;
-      width: 100%;
-      padding: 1rem;
-      top: auto;
-      left: auto;
-      margin-bottom: 2rem;
+      width: 90%;
+      // position: relative;
+      // width: 100%;
+      // padding: 1rem;
+      // top: auto;
+      // left: auto;
+      // margin-bottom: 2rem;
 
       h1 {
         font-size: 1.2rem;
       }
-      h3 {
+      p {
         font-size: 0.9rem;
+      }
+      .show-more-button {
+        padding: 0.5rem 0.8rem;
       }
     }
   }
