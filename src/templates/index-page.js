@@ -35,16 +35,16 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
         </motion.div>
         <div className="slogan">
           <motion.img
-            initial={{ y: "-500px", opacity: 0 }}
+            initial={{ y: "-300px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             src={Logo}
             alt=""
           />
           <motion.div
-            initial={{ x: "-600px", opacity: 0 }}
+            initial={{ x: "-400px", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             className="text"
           >
             <h1>{title}</h1>
