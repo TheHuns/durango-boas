@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 0.5 }}
           className="showcase-image"
           style={{
             backgroundImage: `url(${
@@ -37,14 +37,14 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           <motion.img
             initial={{ y: "-300px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             src={Logo}
             alt=""
           />
           <motion.div
             initial={{ x: "-400px", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="text"
           >
             <h1>{title}</h1>
@@ -57,7 +57,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           <motion.div
             initial={{ y: "200px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: 1 }}
             className="show-more-button"
             onClick={() => clickHandler()}
           >
