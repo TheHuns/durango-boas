@@ -55,9 +55,9 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
             </p>
           </motion.div>
           <motion.div
-            initial={{ y: "300px", opacity: 0 }}
+            initial={{ y: "200px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             className="show-more-button"
             onClick={() => clickHandler()}
           >

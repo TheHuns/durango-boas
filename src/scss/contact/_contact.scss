@@ -55,12 +55,16 @@
             border: 1px solid rgba(68, 68, 68, 0.644);
             border-radius: 4px;
             margin-top: 0.5rem;
+            background: $dark-gray;
+            color: #f4f4f4;
 
             &:focus {
               transform: scale(1.02);
             }
           }
           textarea {
+            background: $dark-gray;
+            color: #f4f4f4;
             height: 100%;
             margin-top: 0.5rem;
             border-radius: 4px;
