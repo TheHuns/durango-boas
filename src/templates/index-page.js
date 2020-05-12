@@ -16,10 +16,10 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
     <div>
       <div className="index-page">
         <div className="overlay"></div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+        <div
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // transition={{ duration: 0.5 }}
           className="showcase-image"
           style={{
             backgroundImage: `url(${
@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => {
           <p style={{ position: "absolute", top: "2%", right: "0" }}>
             The image here could be a single image or roll through a few images.
           </p>
-        </motion.div>
+        </div>
         <div className="slogan">
           <motion.img
             initial={{ y: "-300px", opacity: 0 }}
