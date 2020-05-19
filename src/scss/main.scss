@@ -53,13 +53,14 @@ body {
 // About Page ----------------------------------------------------
 .about-page {
   padding: 3rem;
-  margin: 3rem;
+  margin: 3rem auto;
   background: $dark-gray;
   min-height: 90vh;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.267), -6px -6px 11px #555;
   border-radius: 5px;
   margin-bottom: 0;
   color: #f4f4f4;
+  max-width: 1200px;
 
   h2 {
     padding-bottom: 2rem;
@@ -85,6 +86,14 @@ body {
     }
     .content {
       padding-top: 1rem;
+    }
+  }
+}
+
+@include laptop {
+  .layout-container {
+    .about-page {
+      max-width: 1000px;
     }
   }
 }

@@ -40,48 +40,50 @@ const Navbar = class extends React.Component {
             backgroundColor: "#222",
           }}
         >
-          <div className="brand">
-            <Link to="/">
-              <img src={Logo} alt="small text logo" />
-            </Link>
-          </div>
-          {currentPage && (
-            <div className="current-page">
-              <h4>Current Page</h4>
-              <p>{currentPage}</p>
+          <div className="nav-container">
+            <div className="brand">
+              <Link to="/">
+                <img src={Logo} alt="small text logo" />
+              </Link>
             </div>
-          )}
-          <ul className="links">
-            <li>
-              <Link to="/" activeClassName="active-link">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/available-summary" activeClassName="active-link">
-                Available
-              </Link>
-            </li>
-            <li>
-              <Link to="/collection-container" activeClassName="active-link">
-                Collection
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" activeClassName="active-link">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" activeClassName="active-link">
-                Contact
-              </Link>
-            </li>
-          </ul>
-          <div className="menu-btn" onClick={this.toggleHamburger}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
+            {currentPage && (
+              <div className="current-page">
+                <h4>Current Page</h4>
+                <p>{currentPage}</p>
+              </div>
+            )}
+            <ul className="links">
+              <li>
+                <Link to="/" activeClassName="active-link">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/available-summary" activeClassName="active-link">
+                  Available
+                </Link>
+              </li>
+              <li>
+                <Link to="/collection-container" activeClassName="active-link">
+                  Collection
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" activeClassName="active-link">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" activeClassName="active-link">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+            <div className="menu-btn" onClick={this.toggleHamburger}>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </div>
           </div>
         </nav>
         <div className={`menu-wrapper ${this.state.navBarActiveClass}`}>
