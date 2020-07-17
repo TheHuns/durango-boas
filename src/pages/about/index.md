@@ -1,21 +1,12 @@
 ---
 templateKey: about-page
-title: About our values
+title: About Us
 ---
 
-### Our Beginnings
+At Sweet Tooth, we are dedicated, innovative and creative boutique Rainbow Boa breeders. We take pride in our animals. Their health and wellbeing are our most important consideration. We understand not everyone is an expert and welcome the opportunity to help new keepers become confident and successful.
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid commodi impedit, ipsum velit, laborum deleniti voluptas, ex perferendis minima nisi optio reiciendis incidunt. Nulla ad quibusdam aut, ducimus aspernatur quis nemo, cumque odio accusamus ipsa, soluta quisquam. Voluptatibus, veniam, consequuntur, inventore nisi eum nulla cum a ut rerum quas dicta.
+Like most of you, we were first attracted to the sheer beauty of the Brazilian Rainbow Boa. The iridescence is legendary. The pattern and color are just as beautiful. More than that, they are a perfect size and have a great temperament. Whereas many breeds of snake dull out over time, Brazilian Rainbow Boas just seem to become more beautiful. For some unknown reason they developed a reputation for being aggressive and difficult to care for. Nothing could be further from the truth. With interaction and good husbandry, Brazilian Rainbow Boas make exceptionally fine and friendly pets. Almost anyone can be a successful keeper. Whether you want a pet, a hobby, or perhaps to develop a breeding program, we will be there with information and advice so you can feel confident and your snakes will thrive, not just survive. We encourage ownership and we help with husbandry. So that everyone can be equipped with the skills necessary to raise these amazing snakes in any setting.
 
-### Why We Do It
+Many other species of snake have long had multiple genetic color and pattern variations, called morphs. Until now, Brazilian Rainbow Boas have had only a few. Recently, several new morphs have been discovered and some just released to the public, making available a stunning array of new and beautiful color and pattern designs. At Sweet Tooth, we are committed to demystifying these wonderful animals. It will be amazing to see what people create and what projects they imagine. It is a fantastic time to be a Brazilian Boa Breeder.
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid commodi impedit, ipsum velit, laborum deleniti voluptas, ex perferendis minima nisi optio reiciendis incidunt. Nulla ad quibusdam aut, ducimus aspernatur quis nemo, cumque odio accusamus ipsa, soluta quisquam. Voluptatibus, veniam, consequuntur, inventore nisi eum nulla cum a ut rerum quas dicta.
-
-### What We Provide
-
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid commodi impedit, ipsum velit, laborum deleniti voluptas, ex perferendis minima nisi optio reiciendis incidunt. Nulla ad quibusdam aut, ducimus aspernatur quis nemo, cumque odio accusamus ipsa, soluta quisquam. Voluptatibus, veniam, consequuntur, inventore nisi eum nulla cum a ut rerum quas dicta.
-
-### Our Guarantee
-
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid commodi impedit, ipsum velit, laborum deleniti voluptas, ex perferendis minima nisi optio reiciendis incidunt. Nulla ad quibusdam aut, ducimus aspernatur quis nemo, cumque odio accusamus ipsa, soluta quisquam.
-
+At Sweet Tooth we are gratified with the collection we have assembled and bred. We sought out the best breeders from America and Europe to obtain not just any example of a morph, but the best example of that morph. Quality in color, pattern, and pedigree are the foundation of our breeding programs. At Sweet Tooth, you will find beautiful and colorful animals. They range from the most common Wild Type, to the rare T- albino, and the very rare ‘Pied’ and “Candy Stripe”. In fact, we are the first to import the pied gene into America. Sweet Tooth is also the first to breed triple het recessive Brazilian Rainbow Boas. We love our snakes and know that you will too. Please see the Collection page[link] to view our amazing animals.
